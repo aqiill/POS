@@ -1,0 +1,36 @@
+/* .content-wrapper {
+  background-color: "#EZEEF8";
+} */
+
+.sidebar-dark-primary {
+  background-color: #5b7cfd;
+}
+
+.side-bar-height {
+  height: 500px;
+}
+
+.drop-shadow {
+  box-shadow: 3px 3px 5px lightblue;
+}
+
+.border-radius-20 {
+  border-radius: 20;
+}
+
+.small-box {
+  border-radius: 20px;
+}
+
+.topCardIcon {
+  max-height: 30pt;
+  height: 100%;
+  width: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 14px;
+}
+
+.topCardText > h3 {
+  font-size: 10pt;
+}
