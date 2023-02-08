@@ -20,7 +20,7 @@ body,
   }
 
   .layout-boxed & {
-    @include box-shadow(0 0 10 rgba($black, .3));
+    @include box-shadow(0 0 10 rgba($black, 0.3));
 
     &,
     &::before {
@@ -36,10 +36,18 @@ body,
 
   @supports not (-webkit-touch-callout: none) {
     .layout-fixed & .sidebar {
-      height: calc(100vh - (#{$main-header-height-inner} + #{$main-header-bottom-border-width}));
+      height: calc(
+        100vh -
+          (#{$main-header-height-inner} + #{$main-header-bottom-border-width})
+      );
     }
     .layout-fixed.text-sm & .sidebar {
-      height: calc(100vh - (#{$main-header-height-sm-inner} + #{$main-header-bottom-border-width}));
+      height: calc(
+        100vh -
+          (
+            #{$main-header-height-sm-inner} + #{$main-header-bottom-border-width}
+          )
+      );
     }
   }
 
@@ -94,11 +102,11 @@ body,
 
   body:not(.layout-fixed).layout-navbar-fixed & {
     .main-sidebar {
-      // margin-top: calc(#{$main-header-height} / -1);
+      margin-top: calc(#{$main-header-height} / -1);
 
-      // .sidebar {
-      //   margin-top: $main-header-height;
-      // }
+      .sidebar {
+        margin-top: $main-header-height;
+      }
     }
   }
 
@@ -120,7 +128,12 @@ body,
     a.anchor {
       display: block;
       position: relative;
-      top: calc((#{$main-header-height-inner} + #{$main-header-bottom-border-width} + (#{$main-header-link-padding-y} * 2)) / -1);
+      top: calc(
+        (
+            #{$main-header-height-inner} + #{$main-header-bottom-border-width} +
+              (#{$main-header-link-padding-y} * 2)
+          ) / -1
+      );
     }
 
     .main-sidebar:hover {
@@ -249,7 +262,12 @@ body,
         a.anchor {
           display: block;
           position: relative;
-          top: calc((#{$main-header-height-inner} + #{$main-header-bottom-border-width} + (#{$main-header-link-padding-y} * 2)) / -1);
+          top: calc(
+            (
+                #{$main-header-height-inner} + #{$main-header-bottom-border-width} +
+                  (#{$main-header-link-padding-y} * 2)
+              ) / -1
+          );
         }
 
         &.sidebar-collapse {
@@ -306,13 +324,13 @@ body,
       }
 
       body:not(.layout-fixed).layout#{$infix}-navbar-fixed & {
-        // .main-sidebar {
-        //   margin-top: calc(#{$main-header-height} / -1);
+        .main-sidebar {
+          margin-top: calc(#{$main-header-height} / -1);
 
-        //   .sidebar {
-        //     margin-top: $main-header-height;
-        //   }
-        // }
+          .sidebar {
+            margin-top: $main-header-height;
+          }
+        }
       }
 
       body:not(.layout-fixed).layout#{$infix}-navbar-fixed.text-sm & {
@@ -406,8 +424,8 @@ body,
 
     .main-header {
       .brand-image {
-        margin-top: -.5rem;
-        margin-right: .2rem;
+        margin-top: -0.5rem;
+        margin-right: 0.2rem;
         height: 33px;
       }
     }
@@ -425,8 +443,9 @@ body,
   }
 }
 
-
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini) {
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  ) {
   .content-wrapper,
   .main-footer,
   .main-header {
@@ -509,12 +528,16 @@ body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) {
 .main-sidebar {
   &,
   &::before {
-    $local-sidebar-transition: margin-left $transition-speed $transition-fn, width $transition-speed $transition-fn;
+    $local-sidebar-transition: margin-left $transition-speed $transition-fn,
+      width $transition-speed $transition-fn;
     @include transition($local-sidebar-transition);
     width: $sidebar-width;
   }
 
-  .sidebar-collapse:not(.sidebar-mini):not(.sidebar-mini-md):not(.sidebar-mini-xs) & {
+  .sidebar-collapse:not(.sidebar-mini):not(.sidebar-mini-md):not(
+      .sidebar-mini-xs
+    )
+    & {
     &,
     &::before {
       box-shadow: none !important;
@@ -637,7 +660,6 @@ body:not(.layout-fixed) {
   }
 }
 
-
 .hold-transition {
   .content-wrapper,
   .main-header,
@@ -651,7 +673,7 @@ body:not(.layout-fixed) {
   }
 }
 
-@include dark-mode () {
+@include dark-mode() {
   background-color: $dark-main-bg;
   color: $white;
 
