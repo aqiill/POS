@@ -20,6 +20,7 @@
 
 .small-box {
   border-radius: 20px;
+  min-height: 108.4px;
 }
 
 .topCardIcon {
@@ -31,6 +32,27 @@
   margin-right: 14px;
 }
 
-.topCardText > h3 {
+.topCardText * {
+  margin-block: 0;
+  margin-top: 40;
+  margin-bottom: 40;
+}
+
+.topCardText .cardAmount {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.topCardText .cardDesc {
+  font-size: 12pt;
+}
+
+.dropdown button {
   font-size: 10pt;
+  padding-bottom: 0;
+}
+
+.inner {
+  padding-top: auto;
+  padding-bottom: auto;
 }
