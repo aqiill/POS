@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>POS | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -41,8 +41,16 @@
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
     <link rel="stylesheet" href="./dist/css/custom.css" />
+
+    <style>
+      .card-deck .card {
+        min-width: 150px;
+        max-width: 200px;
+      }
+    </style>
+
   </head>
-  <body class="hold-transition sidebar-mini layout-fixed">
+  <body class="hold-transition sidebar-mini layout-fixed" style="background-color:#e7eef8 ;">
     <div class="wrapper">
       <!-- Preloader -->
       <div
@@ -60,11 +68,11 @@
       <!-- Navbar -->
 
       <!-- Main Sidebar Container -->
-      <aside class="main-sidebar sidebar-dark-primary elevation-4 layout-fixed">
+      <aside class="main-sidebar sidebar-dark-primary elevation-4 layout-fixed" style="border-top-right-radius: 75px;">
         <!-- Brand Logo -->
 
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" >
           <!-- Sidebar user panel (optional) -->
 
           <!-- SidebarSearch Form -->
@@ -80,7 +88,7 @@
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-              <li class="nav-header">MENU</li>
+              <li class="nav-header" >MENU</li>
               <li class="nav-item">
                 <a href="pages/calendar.html" class="nav-link">
                   <i class="nav-icon far fa-calendar-alt"></i>
@@ -135,7 +143,7 @@
                 </a>
               </li>
             </ul>
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="user-panel mt-5 pb-3 pt-3 mb-3 d-flex bg-light mr-4 ml-4" style="border-radius: 10px;">
               <div class="image">
                 <img
                   src="dist/img/user2-160x160.jpg"
@@ -144,7 +152,7 @@
                 />
               </div>
               <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block" style="color: black;">Alexander Pierce</a>
               </div>
             </div>
           </nav>
@@ -301,7 +309,7 @@
 
     <div class="row">
     <div class="col-lg-6">
-      <div class="card">
+      <div class="card" style="height:255px">
         <div class="card-header border-0">
           <div class="d-flex justify-content-between">
             <h3 class="card-title">Statistic of Best Selling</h3>
@@ -317,25 +325,69 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="position-relative mb-0">
-            <canvas id="myChart" height="85"></canvas>
+          <div class="position-absolute mb-0">
+            <canvas id="myChart" height="175"></canvas>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-lg-6">
-      <div class="card">
+      <div class="card" style="height:255px">
         <div class="card-header border-0">
           <div class="d-flex justify-content-between">
             <h3 class="card-title">Stock Alerts</h3>
           </div>
         </div>
-        <div class="card-body">
-          <div class="card" style="width:120px; height: 159px;">
-            <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
-            <div class="card-body">
-              <p class="card-title mt-0 mb-0">Ultra Milk</p>
+        <div class="card-body p-0 pl-4 pr-4">
+          <div class="card-deck" style="max-height: 200px; overflow-y:scroll;">
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
+            </div>
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
+            </div>
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
+            </div>
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
+            </div>
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
+            </div>
+            <div class="card float-right" style="width:150px; height: 200px; font-size: x-small; background-color: #F6F6F6; border-radius: 20px;">
+              <img class="card-img-top" src="dist/img/susu.png"  alt="Product Image">
+              <div class="card-body p-0 ml-1">Susu Ultra Milk Coklat 200ml
+                <div class="progress" style="height: 6px; width: 168px; background-color: white;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>10/100
+              </div> 
             </div>
           </div>
         </div>
@@ -343,7 +395,7 @@
     </div>
 
           <div class="col-lg-6">
-            <div class="card" height="85">
+            <div class="card" style="height:255px">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                   <h3 class="card-title">Today's Transaction</h3>
@@ -388,7 +440,7 @@
             </div>
 
             <div class="col-lg-6">
-              <div class="card">
+              <div class="card" style="height:255px">
                 <div class="card-header border-0">
                   <div class="d-flex justify-content-between">
                     <h3 class="card-title">Expire Soon</h3>
@@ -412,18 +464,64 @@
     <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="invoiceModalLabel">Invoice</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header bg"style="background-color: #5B7CFD; border-bottom-left-radius:45px; ">
+            <a class="modal-title" style="color: white;" id="invoiceModalLabel" >INVOICE</a>
+            <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <!-- Invoice content here -->
+            <div class="d-flex justify-content-center mt-2">
+              <img src="dist/img/SimpleLogo.svg"style="width:35%; height:35%;" alt="logo">
+            </div>
+            <table class="table" style="border-collapse: collapse; border-spacing: 0;">
+              <tbody>
+                <tr>
+                  <td style="border: none; border-bottom: 1px dotted #5B7CFD;">Date Order</td>
+                  <td class="text-right"colspan="7" style="border: none;border-bottom: 1px dotted #5B7CFD;" >02/09/2023</td>
+                </tr>
+                <tr>
+                  <td style="border: none;border-bottom: 1px dotted #5B7CFD;">Total Amount</td>
+                  <td class="text-right" colspan="3" style="border: none;border-bottom: 1px dotted #5B7CFD;">IDR 25,000.00</td>
+                </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead class="bg" style="background-color: #5B7CFD; color: white;">
+              <tr>
+                <td colspan="2" class="text-right">Product</td>
+                <td class="text-right">Qty</td>
+                <td class="text-right">Price</td>
+              </tr>
+            </thead>
+            <tbody class="bg" style="background-color: #F2F3F8; color: black;">
+              <tr>
+                <td colspan="2" class="text-right">Product 1</td>
+                <td class="text-right">2</td>
+                <td class="text-right">IDR 25,000.00</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="text-right">Product 2</td>
+                <td class="text-right">4</td>
+                <td class="text-right">IDR 17,000.00</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text-right">Subtotal</td>
+                <td class="text-right">IDR 42,000.00</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text-right">Discount</td>
+                <td class="text-right">IDR 7,500.00</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text-right">Total</td>
+                <td class="text-right">IDR 34,500.00</td>
+              </tr>
+            </tbody>
+          </table>
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary" onclick="window.print()">Cetak Invoice</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="modal-footer d-flex justify-content-center mb-2">
+            <button class="btn btn-primary btn-rounded" style="background-color:#5B7CFD; border-radius:20px; width: 175px;"onclick="window.print()">Generate Invoice</button>
           </div>
         </div>
       </div>
@@ -534,11 +632,10 @@
     <script>
       $('#invoiceModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
-    var recipient = button.data('whatever')
+    var recipient = button.data('.modal-body')
     var modal = $(this)
-    modal.find('.modal-body').text('Invoice data')
+    modal.find('.modal-body')
     })
-
     </script>
 
 
