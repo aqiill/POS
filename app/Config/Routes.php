@@ -46,6 +46,14 @@ $routes->post('kategori/create', 'Kategori::create');
 $routes->post('kategori/update/(:num)', 'Kategori::update/$1');
 $routes->delete('kategori/delete/(:num)', 'Kategori::delete/$1');
 
+$routes->get('produk', 'Produk::index');
+$routes->get('produk/produk_kategori', 'Produk::produk_kategori');
+$routes->get('produk/produk_kategori/(:num)', 'Produk::produk_kategori/$1');
+$routes->get('produk/(:num)', 'Produk::show/$1');
+$routes->post('produk/create', 'Produk::create');
+$routes->post('produk/update/(:num)', 'Produk::update/$1');
+$routes->delete('produk/delete/(:num)', 'Produk::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
