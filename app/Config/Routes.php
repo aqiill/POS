@@ -40,6 +40,12 @@ $routes->post('member/create', 'Member::create');
 $routes->post('member/update/(:num)', 'Member::update/$1');
 $routes->delete('member/delete/(:num)', 'Member::delete/$1');
 
+$routes->get('kategori', 'Kategori::index');
+$routes->get('kategori/(:num)', 'Kategori::show/$1');
+$routes->post('kategori/create', 'Kategori::create');
+$routes->post('kategori/update/(:num)', 'Kategori::update/$1');
+$routes->delete('kategori/delete/(:num)', 'Kategori::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
