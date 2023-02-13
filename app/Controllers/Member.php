@@ -14,10 +14,10 @@ class Member extends ResourceController
         // $api_key = $this->request->getHeaderLine('api_key');
         $api_key = $this->request->getServer('HTTP_API_KEY');
 
-        if ($api_key != getenv('API_KEY')) {
-            $response = FALSE;
-        } else {
+        if ($api_key === getenv('API_KEY')) {
             $response = TRUE;
+        } else {
+            $response = FALSE;
         }
         return $response;
     }
