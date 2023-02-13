@@ -1,50 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Poppins:wght@300;500&family=Quicksand:wght@400;500&display=swap');
 /* .content-wrapper {
   background-color: "#EZEEF8";
 } */
 
-.sidebar-dark-primary {
-  background-color: #5b7cfd;
-}
-
-.side-bar-height {
-  height: 500px;
-}
-
 .drop-shadow {
-  box-shadow: 3px 3px 5px lightblue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.border-radius-20 {
-  border-radius: 20;
+.main-header {
+  border-bottom: 0px !important;
+}
+
+.navbar, .brand-link-custom{
+  background-color: rgb(231, 238, 248);
+  height: 90px;
+}
+
+.brand-link-custom {
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 0px !important;
+  transition: width .3s ease-in-out;
+  white-space: nowrap;
+  border-bottom: 0px !important;
+}
+
+.brand-link-custom .brand-image {
+  float: left;
+  line-height: .8;
+  margin-left: 0.8rem;
+  margin-right: 0.5rem;
+  margin-top: 23.5px;
+  max-height: 43px;
+  width: auto;
+}
+
+.layout-navbar-fixed .wrapper .content-wrapper {
+  margin-top:  90px !important;
+}
+
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link-custom:not([class*=navbar]) {
+  background-color: rgb(231, 238, 248);
+}
+
+.sidebar-base {
+  background-color: rgb(231, 238, 248);
+  width: 250px;
+}
+
+.sidebar {
+  margin-top: 0px !important;
+  background-color: #5b7cfd !important; 
+  border-top-right-radius: 50px;
+}
+
+#sidebar-overlay {
+  background-color: rgba(0,0,0,0);
+}
+
+.sidebar-mini-xs.sidebar-collapse .main-header {
+  margin-left: 0px !important;
+}
+
+.content-wrapper>.content {
+  background-color: #e7eef8 !important;
+  padding: 0 1rem;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar-mini-xs .content-wrapper, .sidebar-mini-xs .main-footer{
+    transition: margin-left .3s ease-in-out;
+    margin-left: 250px;  
+  }
+  .sidebar-mini-xs .main-header {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 768px){
+  .sidebar-mini-xs .content-wrapper, .sidebar-mini-xs .main-footer{
+      transition: margin-left .3s ease-in-out;
+      margin-left: 250px;
+  }
+  .sidebar-mini-xs .main-header {
+    transition: none !important;
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.nav-header {
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(216, 216, 216, 1);
+  padding: 0rem 0.5rem 0rem 0.75rem;
+}
+
+.nav-header p {
+  margin-bottom: 0px !important;
+}
+
+.nav-link {
+  padding: 0px;
+}
+
+.nav-pills .nav-link{
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: left; 
+  color: rgba(216, 216, 216, 1); 
+}
+
+.nav-icon {
+  width: 25px !important;
+  height: 25px !important;
+  margin: 14px 20px 18px 16px !important;
+  filter: invert(88%) sepia(29%) saturate(0%) hue-rotate(140deg) brightness(93%) contrast(93%);
+}
+
+.icon-active .nav-icon {
+  filter: invert(100%) sepia(88%) saturate(0%) hue-rotate(110deg) brightness(112%) contrast(101%);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(217, 217, 217, 0.4) 8.64%, rgba(217, 217, 217, 0) 100%);
+  border-radius: 50px 0px 0px 50px;
+  display: flex;
+}
+
+.nav-link.active .icon-active {
+  width: 56px;
+  height: 56px;
+  background: rgba(217, 217, 217, 0.2);
+  border-radius: 50px 50px 50px 50px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.light-mode a:not(.btn):hover{
+  color: #fff !important;
+}
+
+.sidebar-mini .main-sidebar .nav-link, .sidebar-mini-md .main-sidebar .nav-link, .sidebar-mini-xs .main-sidebar .nav-link {
+  width: calc(250px - 0.5rem * 2);
+  transition: width ease-in-out .3s;
+  height: 56px;
+  
+}
+
+.sidebar-collapse.sidebar-mini .main-sidebar .nav-sidebar .nav-link.active, .sidebar-collapse.sidebar-mini-md .main-sidebar .nav-sidebar .nav-link.active, .sidebar-collapse.sidebar-mini-xs .main-sidebar .nav-sidebar .nav-link.active {
+  width: 3.6rem;
+  border-radius: 50px 50px 50px 50px;
 }
 
 .small-box {
   border-radius: 20px;
-  min-height: 108.4px;
+  min-height: 80px;
+  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+  position: relative;
+  width: 100%;
 }
 
-.topCardIcon {
-  max-height: 30pt;
+.small-box.mb-3{
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  margin-bottom: 20px !important;
+  height: 117.2px;
+}
+
+.top-card-icon {
+  max-height: 64px;
   height: 100%;
   width: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 14px;
+  padding-left: 1rem;
 }
 
-.topCardText * {
+.dropdown .btn{
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0em;
+  padding: 0 5px 0 0;
+}
+
+.dropdown-item {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+
+.dropdown-item:: {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+
+.top-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.8;
+  flex: 1;
+  overflow: hidden;
+  padding: 0 10px;
   margin-block: 0;
-  margin-top: 40;
-  margin-bottom: 40;
+  text-align: start;
 }
 
-.topCardText .cardAmount {
-  font-size: 16pt;
-  font-weight: bold;
+.top-card-text * {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.topCardText .cardDesc {
-  font-size: 12pt;
+.top-card-text .up-down {
+  font-family: Quicksand;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(0, 212, 8, 1);
+}
+
+.top-card-text .card-amount {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  letter-spacing: 0em;
+  line-height: 27px;
+}
+
+.top-card-text .card-desc {
+  font-family: Quicksand;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .dropdown button {
@@ -55,4 +264,19 @@
 .inner {
   padding-top: auto;
   padding-bottom: auto;
+}
+
+.card {
+  height: 390px;
+  border-radius: 20px;
+}
+
+.card-body .row {
+  overflow: hidden;
+  position: relative;
+  padding-right: 20px;
+}
+
+.chart {
+  height: max-content;
 }
