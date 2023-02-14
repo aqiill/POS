@@ -5,72 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>POS | Dashboard</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="./dist/css/custom.css" />
-</head>
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs">
-<div class="wrapper">
-
-  <!-- Preloader -->
-  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="./dist/css/custom.css" />
+  </head>
+  <body
+    class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs"
+  >
+    <div class="wrapper">
+      <!-- Preloader -->
+      <!-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div> -->
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand">
-    <!-- Size Controller -->
-    <span style="display: block;">
-      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"></i></a>
-    </span>
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link-custom" style="height: 90px;">
-      <img src="./docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" ; height: 43px; width: 197px;">
-      <span class="brand-text font-weight-light"></span>
-    </a>
-    
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand">
+        <!-- Size Controller -->
+        <span style="display: block">
+          <a
+            data-widget="pushmenu"
+            href="#"
+            role="button"
+            style="position: sticky; margin-left: 23px; margin-right: 13px"
+            ><i class="fas fa-bars"></i
+          ></a>
+        </span>
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link-custom" style="height: 90px">
+          <img src="./docs/assets/img/POS_logo.png" alt="AdminLTE Logo"
+          class="brand-image" ; height: 43px; width: 197px;">
+          <span class="brand-text font-weight-light"></span>
         </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-base sidebar-no-expand" style="margin-top: 90px;">
-    <!-- Sidebar -->
-    <div class="sidebar sidebar-custom" >
-      <!-- Sidebar Menu -->
-      <nav class="mt-0">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
-          <!-- MENU -->
-          <li class="nav-header">
-            <p>MENU</p>
-          </li>
-          <!-- Dashboard nav AKTIV -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <div class="icon-active">
-                <img class="nav-icon" src="./docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
-              </div>
-              <div class="active-wrap" style="position: relative; padding-top: 2px;">
-                <p>
-                  Dashboard
-                </p>
-              </div>
-            </a>
-          </li>
-          <!-- Product Nav -->
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <img class="nav-icon" src="./docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
@@ -161,10 +141,7 @@
             <a href="#" class="d-block" style="color: black;">Arya ganteng</a>
           </div>
       </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->    
-  </aside>
+      <!-- /.navbar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper row">
@@ -212,84 +189,49 @@
           </div>
           <!-- /.revenue -->
 
-          <!-- Profit -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="small-box bg-light drop-shadow flex-row" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" >
-              <div class="dropdown d-flex flex-row-reverse">
-                <button
-                  class="btn dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Today
-                </button>
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton"
-                >
-                  <a class="dropdown-item" href="#">This Week</a>
-                  <a class="dropdown-item" href="#">This Month</a>
-                  <a class="dropdown-item" href="#">This Year</a>
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <img
-                  class="top-card-icon"
-                  src="./docs/assets/img/profit_icon.png"
-                  alt=""
-                />
-                <div class="top-card-text">
-                  <span class="up-down">▲ 100%</span>
-                  <span class="card-amount">IDR 520.000,00</span>
-                  <span class="card-desc">TOTAL PROFIT</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.profit -->
-
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
-
-          <!-- Employee -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="small-box bg-light drop-shadow flex-row mb-3" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" >
-              <div class="d-flex flex-row">
-                <img
-                  class="top-card-icon"
-                  src="./docs/assets/img/profile-circle.png"
-                  alt=""
-                />
-                <div class="top-card-text">
-                  <span class="card-amount">3</span>
-                  <span class="card-desc">EMPLOYEES</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.employee -->
-          
-          <!-- Member -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="small-box bg-light drop-shadow flex-row mb-3" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" >
-              <div class="d-flex flex-row">
-                <img
-                  class="top-card-icon"
-                  src="./docs/assets/img/member_icon.png"
-                  alt=""
-                />
-                <div class="top-card-text">
-                  <span class="card-amount">5</span>
-                  <span class="card-desc">MEMBERS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.member -->
+              <!-- OTHERS -->
+              <li class="nav-header">
+                <p>OTHER</p>
+              </li>
+              <!-- Settings Nav -->
+              <li class="nav-item">
+                <a href="pages/widgets.html" class="nav-link">
+                  <img
+                    class="nav-icon"
+                    src="./docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg"
+                    alt="Settings Logo"
+                  />
+                  <p>Settings</p>
+                </a>
+              </li>
+              <!-- Help & Support Nav -->
+              <li class="nav-item">
+                <a href="pages/widgets.html" class="nav-link">
+                  <img
+                    class="nav-icon"
+                    src="./docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg"
+                    alt="Help & Support Logo"
+                  />
+                  <p>Help & Support</p>
+                </a>
+              </li>
+              <!-- Sign Out Nav -->
+              <li class="nav-item">
+                <a href="pages/widgets.html" class="nav-link">
+                  <img
+                    class="nav-icon"
+                    src="./docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg"
+                    alt="Sign Out Logo"
+                  />
+                  <p>Sign Out</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
         </div>
+        <!-- /.sidebar -->
+      </aside>
 
         <!-- Main -->
         <div class="row content-card">
@@ -582,86 +524,157 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="d-flex justify-content-center mt-2">
-          <img src="dist/img/SimpleLogo.svg"style="width:35%; height:35%;" alt="logo">
+      <!-- /.content-wrapper -->
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Modal Body-->
+    <div
+      class="modal fade"
+      id="invoiceModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="invoiceModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header bg"
+            style="background-color: #5b7cfd; border-bottom-left-radius: 45px"
+          >
+            <a class="modal-title" style="color: white" id="invoiceModalLabel"
+              >INVOICE</a
+            >
+            <button
+              type="button"
+              class="close"
+              style="color: white"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center mt-2">
+              <img
+                src="dist/img/SimpleLogo.svg"
+                style="width: 35%; height: 35%"
+                alt="logo"
+              />
+            </div>
+            <table
+              class="table"
+              style="border-collapse: collapse; border-spacing: 0"
+            >
+              <tbody>
+                <tr>
+                  <td style="border: none; border-bottom: 1px dotted #5b7cfd">
+                    Date Order
+                  </td>
+                  <td
+                    class="text-right"
+                    colspan="7"
+                    style="border: none; border-bottom: 1px dotted #5b7cfd"
+                  >
+                    02/09/2023
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border: none; border-bottom: 1px dotted #5b7cfd">
+                    Total Amount
+                  </td>
+                  <td
+                    class="text-right"
+                    colspan="3"
+                    style="border: none; border-bottom: 1px dotted #5b7cfd"
+                  >
+                    IDR 25,000.00
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead class="bg" style="background-color: #5b7cfd; color: white">
+                <tr>
+                  <td colspan="2" class="text-right">Product</td>
+                  <td class="text-right">Qty</td>
+                  <td class="text-right">Price</td>
+                </tr>
+              </thead>
+              <tbody class="bg" style="background-color: #f2f3f8; color: black">
+                <tr>
+                  <td colspan="2" class="text-right">Product 1</td>
+                  <td class="text-right">2</td>
+                  <td class="text-right">IDR 25,000.00</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-right">Product 2</td>
+                  <td class="text-right">4</td>
+                  <td class="text-right">IDR 17,000.00</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">Subtotal</td>
+                  <td class="text-right">IDR 42,000.00</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">Discount</td>
+                  <td class="text-right">IDR 7,500.00</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right">Total</td>
+                  <td class="text-right">IDR 34,500.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer d-flex justify-content-center mb-2">
+            <button
+              class="btn btn-primary btn-rounded"
+              style="
+                background-color: #5b7cfd;
+                border-radius: 20px;
+                width: 175px;
+              "
+              onclick="window.print()"
+            >
+              Generate Invoice
+            </button>
+          </div>
         </div>
-        <table class="table" style="border-collapse: collapse; border-spacing: 0;">
-          <tbody>
-            <tr>
-              <td style="border: none; border-bottom: 1px dotted #5B7CFD;">Date Order</td>
-              <td class="text-right"colspan="7" style="border: none;border-bottom: 1px dotted #5B7CFD;" >02/09/2023</td>
-            </tr>
-            <tr>
-              <td style="border: none;border-bottom: 1px dotted #5B7CFD;">Total Amount</td>
-              <td class="text-right" colspan="3" style="border: none;border-bottom: 1px dotted #5B7CFD;">IDR 25,000.00</td>
-            </tr>
-        </tbody>
-      </table>
-      <table class="table">
-        <thead class="bg" style="background-color: #5B7CFD; color: white;">
-          <tr>
-            <td colspan="2" class="text-right">Product</td>
-            <td class="text-right">Qty</td>
-            <td class="text-right">Price</td>
-          </tr>
-        </thead>
-        <tbody class="bg" style="background-color: #F2F3F8; color: black;">
-          <tr>
-            <td colspan="2" class="text-right">Product 1</td>
-            <td class="text-right">2</td>
-            <td class="text-right">IDR 25,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="2" class="text-right">Product 2</td>
-            <td class="text-right">4</td>
-            <td class="text-right">IDR 17,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Subtotal</td>
-            <td class="text-right">IDR 42,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Discount</td>
-            <td class="text-right">IDR 7,500.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Total</td>
-            <td class="text-right">IDR 34,500.00</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <div class="modal-footer d-flex justify-content-center mb-2">
-        <button class="btn btn-primary btn-rounded" style="background-color:#5B7CFD; border-radius:20px; width: 175px;"onclick="window.print()">Generate Invoice</button>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
 
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- PAGE PLUGINS -->
+    <!-- jQuery Mapael -->
+    <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+    <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
 
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard2.js"></script>
 
 <!-- Chart Bar -->
 <script>
