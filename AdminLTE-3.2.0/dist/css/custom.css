@@ -206,7 +206,7 @@
   letter-spacing: 0em;
 }
 
-.dropdown-item:: {
+.dropdown-item{
   font-family: Poppins;
   font-size: 12px;
   font-weight: 300;
@@ -279,4 +279,71 @@
 
 .chart {
   height: max-content;
+}
+
+.card-deck{
+  flex-flow: row  !important;
+}
+
+.left-card-icon{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.card-susu{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  min-height: 125px;
+  max-height: 125px;
+  min-width: 310px;
+  max-width: 310px;
+  overflow: hidden;
+  }
+
+  .card-susu img{
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    }
+
+  .card-text {
+    text-align: left;
+}
+
+.card-text p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.card-header{
+  border-bottom: none;
+}
+
+/* width height*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
