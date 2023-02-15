@@ -46,6 +46,12 @@ $routes->post('kategori/create', 'Kategori::create');
 $routes->post('kategori/update/(:num)', 'Kategori::update/$1');
 $routes->delete('kategori/delete/(:num)', 'Kategori::delete/$1');
 
+$routes->get('users', 'Users::index');
+$routes->get('users/(:num)', 'Users::show/$1');
+$routes->post('users/create', 'Users::create');
+$routes->post('users/update/(:num)', 'Users::update/$1');
+$routes->delete('users/delete/(:num)', 'Users::delete/$1');
+
 $routes->get('produk', 'Produk::index');
 $routes->get('produk/produk_kategori', 'Produk::produk_kategori');
 $routes->get('produk/produk_kategori/(:num)', 'Produk::produk_kategori/$1');
