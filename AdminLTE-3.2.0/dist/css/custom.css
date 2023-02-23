@@ -384,8 +384,8 @@
   gap: 5px;
 }
 
-.table-row * {
-  font-size: 12pt;
+.fs-10 * {
+  font-size: 10pt;
 }
 
 .profile-pic {
