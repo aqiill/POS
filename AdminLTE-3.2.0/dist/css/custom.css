@@ -387,3 +387,56 @@
 .table-row * {
   font-size: 12pt;
 }
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-pic .file-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile-pic .change-pic {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  text-align: center;
+  line-height: 40px;
+}
+
+.form-control-plaintext:focus {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+a.hidden-link {
+color: inherit;
+text-decoration: underline;
+}
