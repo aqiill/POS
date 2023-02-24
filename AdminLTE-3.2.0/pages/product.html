@@ -14,7 +14,11 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="../dist/css/custom.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" integrity="sha512-LeCmts7kEi09nKc+DwGJqDV+dNQi/W8/qb0oUSsBLzTYiBwxj0KBlAow2//jV7jwEHwSCPShRN2+IWwWcn1x7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
+  
 </head>
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs">
 <div class="wrapper">
@@ -366,9 +370,59 @@
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                   <div class="add-export" style="display: flex;">
-                    <button class="btn bg-transparent table-product-button" style="display: flex;">
+                    <button class="btn bg-transparent table-product-button" data-toggle="modal" data-target=".bd-example-modal-sm">
                       <iconify-icon icon="oi:plus"></iconify-icon>
-                      Add Product</button>
+                      Add Product
+                    </button>
+                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button> -->
+                          <div class="modal-header">
+                            <h5 class="modal-title">Add Product</h5>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Image</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Image's src">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Product Name</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Product Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Brand</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input Brand">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect1">Category</label>
+                              <select class="form-control" id="exampleFormControlSelect1"
+                              placeholder="Select Category">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <div id="sandbox-container">
+                                <div class="input-group date">
+                                  <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <button class="btn bg-transparent table-product-button">
                       <iconify-icon icon="oi:share-boxed"></iconify-icon>
                       Export Product</button>
@@ -643,7 +697,31 @@ modal.find('.modal-body')
 })
 </script>
 
-<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<script>
+  $('.datepicker').datepicker();
+</script>
 
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <!-- Datepicker -->
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Main jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js">
+    </script>
+    <script>
+      $('#sandbox-container .input-group.date').datepicker({
+      
+      startView: 1,
+      clearBtn: true,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true
+    });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Datepicker -->
 </body>
 </html>
