@@ -85,11 +85,12 @@ class Users extends ResourceController
     public function create()
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_user' => $this->request->getPost('nama_user'),
-                'email_user' => $this->request->getPost('email_user'),
-                'password' => sha1($this->request->getPost('password')),
-                'role' => $this->request->getPost('role'),
+                'nama_user' => $i->nama_user,
+                'email_user' => $i->email_user,
+                'password' => sha1($i->password),
+                'role' => $i->role,
                 'date_created' => date('Y-m-d H:i:s')
             ];
 
@@ -123,12 +124,13 @@ class Users extends ResourceController
     public function update($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_user' => $this->request->getPost('nama_user'),
-                'email_user' => $this->request->getPost('email_user'),
-                'password' => sha1($this->request->getPost('password')),
-                'role' => $this->request->getPost('role'),
-                'date_modified' => date('Y-m-d H:i:s')
+                'nama_user' => $i->nama_user,
+                'email_user' => $i->email_user,
+                'password' => sha1($i->password),
+                'role' => $i->role,
+                'date_created' => date('Y-m-d H:i:s')
             ];
 
             $updatedData = $this->model->update($id, $data);

@@ -7,13 +7,14 @@ use App\Models\M_login;
 
 class Login extends Controller
 {
-    public function index()
+    public function auth()
     {
         $api_key = $this->request->getServer('HTTP_API_KEY');
 
         if ($api_key === getenv('API_KEY')) {
-            $email_user = $this->request->getPost('email_user');
-            $password = $this->request->getPost('password');
+            $i = $this->request->getJSON();
+            $email_user = $i->email_user;
+            $password = $i->password;
 
             $model = new M_login();
             $user = $model->validate_user($email_user, $password);

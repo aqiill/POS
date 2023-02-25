@@ -85,12 +85,13 @@ class Member extends ResourceController
     public function create()
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_member' => $this->request->getPost('nama_member'),
-                'no_whatsapp' => $this->request->getPost('no_whatsapp'),
-                'email_member' => $this->request->getPost('email_member'),
-                'status_member' => $this->request->getPost('status_member'),
-                'no_member' => $this->request->getPost('no_member')
+                'nama_member' => $i->nama_member,
+                'no_whatsapp' => $i->no_whatsapp,
+                'email_member' => $i->email_member,
+                'status_member' => $i->status_member,
+                'no_member' => $i->no_member
             ];
 
             $createdData = $this->model->insert($data);
@@ -123,12 +124,13 @@ class Member extends ResourceController
     public function update($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_member' => $this->request->getPost('nama_member'),
-                'no_whatsapp' => $this->request->getPost('no_whatsapp'),
-                'email_member' => $this->request->getPost('email_member'),
-                'status_member' => $this->request->getPost('status_member'),
-                'no_member' => $this->request->getPost('no_member')
+                'nama_member' => $i->nama_member,
+                'no_whatsapp' => $i->no_whatsapp,
+                'email_member' => $i->email_member,
+                'status_member' => $i->status_member,
+                'no_member' => $i->no_member
             ];
 
             $updatedData = $this->model->update($id, $data);

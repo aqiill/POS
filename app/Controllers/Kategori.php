@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\API\ResponseTrait;
 
 class Kategori extends ResourceController
 {
@@ -85,8 +86,9 @@ class Kategori extends ResourceController
     public function create()
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_kategori' => $this->request->getPost('nama_kategori'),
+                'nama_kategori' => $i->nama_kategori,
                 'date_created' => date('Y-m-d H:i:s')
             ];
 
@@ -120,9 +122,10 @@ class Kategori extends ResourceController
     public function update($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
             $data = [
-                'nama_kategori' => $this->request->getPost('nama_kategori'),
-                'date_modified' => date('Y-m-d H:i:s')
+                'nama_kategori' => $i->nama_kategori,
+                'date_updated' => date('Y-m-d H:i:s')
             ];
 
             $updatedData = $this->model->update($id, $data);
