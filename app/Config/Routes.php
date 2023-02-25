@@ -19,7 +19,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-$routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -31,34 +31,11 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-
-$routes->post('login', 'Login::index');
-
-$routes->get('member', 'Member::index');
-$routes->get('member/(:num)', 'Member::show/$1');
-$routes->post('member/create', 'Member::create');
-$routes->post('member/update/(:num)', 'Member::update/$1');
-$routes->delete('member/delete/(:num)', 'Member::delete/$1');
-
-$routes->get('kategori', 'Kategori::index');
-$routes->get('kategori/(:num)', 'Kategori::show/$1');
-$routes->post('kategori/create', 'Kategori::create');
-$routes->post('kategori/update/(:num)', 'Kategori::update/$1');
-$routes->delete('kategori/delete/(:num)', 'Kategori::delete/$1');
-
-$routes->get('users', 'Users::index');
-$routes->get('users/(:num)', 'Users::show/$1');
-$routes->post('users/create', 'Users::create');
-$routes->post('users/update/(:num)', 'Users::update/$1');
-$routes->delete('users/delete/(:num)', 'Users::delete/$1');
-
-$routes->get('produk', 'Produk::index');
-$routes->get('produk/produk_kategori', 'Produk::produk_kategori');
-$routes->get('produk/produk_kategori/(:num)', 'Produk::produk_kategori/$1');
-$routes->get('produk/(:num)', 'Produk::show/$1');
-$routes->post('produk/create', 'Produk::create');
-$routes->post('produk/update/(:num)', 'Produk::update/$1');
-$routes->delete('produk/delete/(:num)', 'Produk::delete/$1');
+$routes->resource('login');
+$routes->resource('member');
+$routes->resource('kategori');
+$routes->resource('users');
+$routes->resource('produk');
 
 /*
  * --------------------------------------------------------------------
