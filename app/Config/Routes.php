@@ -36,6 +36,7 @@ $routes->resource('member');
 $routes->resource('kategori');
 $routes->resource('users');
 $routes->resource('produk');
+$routes->resource('transaksi');
 
 /*
  * --------------------------------------------------------------------
