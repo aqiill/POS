@@ -40,6 +40,9 @@ $routes->get('produk/stok/', 'Produk::stok/');
 $routes->get('produk/expired/', 'Produk::expired/');
 $routes->resource('produk');
 
+$routes->get('transaksi/best_selling/', 'Transaksi::best_selling/');
+$routes->get('transaksi/pendapatan/', 'Transaksi::pendapatan/');
+$routes->get('transaksi/riwayat_transaksi/', 'Transaksi::riwayat_transaksi/');
 $routes->resource('transaksi');
 
 /*

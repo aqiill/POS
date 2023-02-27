@@ -160,6 +160,37 @@ class Transaksi extends ResourceController
         }
     }
 
+    public function best_selling()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            $model = new M_transaksi();
+            $best_selling = $model->best_selling();
+
+            if ($best_selling) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Best Selling',
+                    'data' => $best_selling
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
     // public function update($id = null)
     // {
     //     if ($this->validateApiKey() == TRUE) {
@@ -218,6 +249,72 @@ class Transaksi extends ResourceController
                 $response = [
                     'status' => 400,
                     'message' => 'Failed to delete data'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
+    public function pendapatan()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            $model = new M_transaksi();
+            $total_pendapatan = $model->total_pendapatan();
+            $total_harian = $model->total_harian();
+
+            if ($total_pendapatan != "" && $total_harian != "") {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Pendapatan',
+                    'data' => [
+                        'total_pendapatan' => $total_pendapatan['total'],
+                        'total_harian' => $total_harian['total']
+                    ]
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
+    public function riwayat_transaksi()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            $model = new M_transaksi();
+            $riwayat_transaksi = $model->riwayat_transaksi();
+
+            if ($riwayat_transaksi) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Riwayat Transaksi',
+                    'data' => $riwayat_transaksi
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found'
                 ];
 
                 return $this->response->setJSON($response);

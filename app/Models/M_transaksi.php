@@ -41,20 +41,38 @@ class M_transaksi extends Model
     {
         $query = $this->db->table($table)->insert($data);
     }
-    // public function get_produk_kategori()
-    // {
-    //     return $this->db->table('produk')
-    //         ->select('*')
-    //         ->join('kategori', 'kategori.kategori_id = produk.kategori_id')
-    //         ->get()->getResultArray();
-    // }
 
-    // public function get_produk_kategori_show($id = null)
-    // {
-    //     return $this->db->table('produk')
-    //         ->select('*')
-    //         ->join('kategori', 'kategori.kategori_id = produk.kategori_id')
-    //         ->where('produk_id', $id)
-    //         ->get()->getResultArray();
-    // }
+    public function best_selling()
+    {
+        return $this->db->table('transaksi')
+            ->select('produk.nama_produk, SUM(transaksi.jml_pesan) as total')
+            ->join('produk', 'produk.produk_id = transaksi.id_produk')
+            ->groupBy('produk.nama_produk')
+            ->orderBy('total', 'DESC')
+            ->limit(3)
+            ->get()->getResultArray();
+    }
+
+    public function total_pendapatan()
+    {
+        return $this->db->table('pembayaran')
+            ->select('SUM(pembayaran.total_pembayaran) as total')
+            ->get()->getRowArray();
+    }
+
+    public function total_harian()
+    {
+        return $this->db->table('pembayaran')
+            ->select('SUM(pembayaran.total_pembayaran) as total')
+            ->where('DATE_FORMAT(tgl_pembayaran, "%Y-%m-%d")', date('Y-m-d'))
+            ->get()->getRowArray();
+    }
+
+    public function riwayat_transaksi()
+    {
+        return $this->db->table('pembayaran')
+            ->select('pembayaran.*, users.nama_user')
+            ->join('users', 'users.id_user = pembayaran.id_user')
+            ->get()->getResultArray();
+    }
 }
