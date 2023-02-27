@@ -89,6 +89,68 @@ class Produk extends ResourceController
         }
     }
 
+    public function stok()
+    {
+        $model = new M_produk();
+        if ($this->validateApiKey() == TRUE) {
+            $produk = $model->stok();
+
+            if ($produk) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Stock Alert',
+                    'data' => $produk
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
+    public function expired()
+    {
+        $model = new M_produk();
+        if ($this->validateApiKey() == TRUE) {
+            $produk = $model->expired();
+
+            if ($produk) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Expired Soon',
+                    'data' => $produk
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
     public function show($id = null)
     {
         if ($this->validateApiKey() == TRUE) {

@@ -43,4 +43,20 @@ class M_produk extends Model
             ->where('produk_id', $id)
             ->get()->getResultArray();
     }
+
+    public function stok()
+    {
+        return $this->db->table('produk')
+            ->select('*')
+            ->where('stok <=', '100')
+            ->get()->getResultArray();
+    }
+
+    public function expired()
+    {
+        return $this->db->table('produk')
+            ->select('*')
+            ->where('DATEDIFF(expired_date, CURDATE()) <=', 180)
+            ->get()->getResultArray();
+    }
 }

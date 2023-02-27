@@ -35,7 +35,11 @@ $routes->resource('login');
 $routes->resource('member');
 $routes->resource('kategori');
 $routes->resource('users');
+
+$routes->get('produk/stok/', 'Produk::stok/');
+$routes->get('produk/expired/', 'Produk::expired/');
 $routes->resource('produk');
+
 $routes->resource('transaksi');
 
 /*
