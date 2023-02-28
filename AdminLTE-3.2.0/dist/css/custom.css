@@ -453,3 +453,10 @@ a {
   text-decoration: none;
   color: black;
 }
+.nav-item img {
+  color: white;
+}
+
+.card-header h6 {
+  font-weight: 500;
+}

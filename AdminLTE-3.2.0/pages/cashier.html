@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POS | Dashboard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/custom.css" />
+  
+  <!-- datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
+  
+</head>
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div> -->
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand">
+    <!-- Size Controller -->
+    <span style="display: block;">
+      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"></i></a>
+    </span>
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link-custom" style="height: 90px;">
+      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" ; height: 43px; width: 197px;">
+      <span class="brand-text font-weight-light"></span>
+    </a>
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-base sidebar-no-expand" style="margin-top: 90px;">
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-custom" >
+      <!-- Sidebar Menu -->
+      <nav class="mt-0">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
+            <!-- MENU -->
+            <li class="nav-header">
+              <p>MENU</p>
+            </li>
+            <!-- Dashboard nav AKTIV -->
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link active">
+                <div class="icon-active">
+                  <img class="nav-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
+                </div>
+                <div class="active-wrap" style="position: relative; padding-top: 2px;">
+                  <p>
+                    Order
+                  </p>
+                </div>
+              </a>
+            </li>
+            <!-- OTHERS -->
+            <li class="nav-header">
+              <p>OTHERS</p>
+            </li>
+            <!-- Log Out Nav -->
+            <li class="nav-item">
+              <a href="pages/widgets.html" class="nav-link">
+                <img class="nav-icon" src="../docs/assets/img//SignOutIcon.png" alt="Product Logo">
+                <p>
+                  Log Out
+                </p>
+              </a>
+            </li>
+            <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" style="border-radius: 10px;">
+              <div class="image">
+                <img
+                  src="../dist/img/user2-160x160.jpg"
+                  class="img-circle elevation-2"
+                  alt="User Image"
+                />
+              </div>
+              <div class="info">
+                <a href="#" class="d-block" style="color: black;">Arya ganteng</a>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->    
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper row">
+    <!-- Main content -->
+    <section class="content col">
+      <div class="container-fluid">
+        
+        <!-- Main -->
+        <div class="row content-card">
+
+          <!-- Transaction History -->
+          <div class="col-lg-12">
+            <div class="card order-list" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h6>Order List</h6>
+                <div>
+                  <div class="input-group">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control" />
+                    </div>
+                    <button type="button" class="btn btn-primary">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+
+                </div>
+                </div>
+              </div>
+              <div class="card-body" style="padding: 0px 24px;">
+                <table class="table">
+                  <thead>
+                    <tr class="text-muted fs-10">
+                      <td scope="col">No</td>
+                      <td scope="col">Photo</td>
+                      <td scope="col">Product Name</td>
+                      <td scope="col">Expire Date</td>
+                      <td scope="col">Price</td>
+                      <td scope="col">Quantity</td>
+                      <td scope="col">Sub Total</td>
+                      <td scope="col">Actions</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="fs-10">
+                      <td scope="row">1</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>22/02/2023</td>
+                      <td>IDR 25,500.00</td>
+                      <td>1</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent">
+                          <iconify-icon icon="mdi:minus-circle-outline" style="color: black;" width="20"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent">
+                          <iconify-icon icon="mdi:plus-circle-outline" style="color: black;" width="20"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10">
+                      <td scope="row">1</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>22/02/2023</td>
+                      <td>IDR 25,500.00</td>
+                      <td>1</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent">
+                          <iconify-icon icon="mdi:minus-circle-outline" style="color: black;" width="20"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent">
+                          <iconify-icon icon="mdi:plus-circle-outline" style="color: black;" width="20"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;">
+              <div class="card-header border-0 d-flex justify-content-between">
+                <h6>Payment Method</h6>
+                <h6>Payment Details</h6>
+              </div>
+              <div class="card-body" style="padding: 0px 24px;">
+              
+              </div>
+            </div>
+          </div>
+          
+
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- Modal Body-->
+<div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg"style="background-color: #5B7CFD; border-bottom-left-radius:45px; ">
+        <a class="modal-title" style="color: white;" id="invoiceModalLabel" >INVOICE</a>
+        <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-center mt-2">
+          <img src="../dist/img/SimpleLogo.svg"style="width:35%; height:35%;" alt="logo">
+        </div>
+        <table class="table" style="border-collapse: collapse; border-spacing: 0;">
+          <tbody>
+            <tr>
+              <td style="border: none; border-bottom: 1px dotted #5B7CFD;">Date Order</td>
+              <td class="text-right"colspan="7" style="border: none;border-bottom: 1px dotted #5B7CFD;" >02/09/2023</td>
+            </tr>
+            <tr>
+              <td style="border: none;border-bottom: 1px dotted #5B7CFD;">Total Amount</td>
+              <td class="text-right" colspan="3" style="border: none;border-bottom: 1px dotted #5B7CFD;">IDR 25,000.00</td>
+            </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <thead class="bg" style="background-color: #5B7CFD; color: white;">
+          <tr>
+            <td colspan="2" class="text-right">Product</td>
+            <td class="text-right">Qty</td>
+            <td class="text-right">Price</td>
+          </tr>
+        </thead>
+        <tbody class="bg" style="background-color: #F2F3F8; color: black;">
+          <tr>
+            <td colspan="2" class="text-right">Product 1</td>
+            <td class="text-right">2</td>
+            <td class="text-right">IDR 25,000.00</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="text-right">Product 2</td>
+            <td class="text-right">4</td>
+            <td class="text-right">IDR 17,000.00</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right">Subtotal</td>
+            <td class="text-right">IDR 42,000.00</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right">Discount</td>
+            <td class="text-right">IDR 7,500.00</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right">Total</td>
+            <td class="text-right">IDR 34,500.00</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer d-flex justify-content-center mb-2">
+        <button class="btn btn-primary btn-rounded" style="background-color:#5B7CFD; border-radius:20px; width: 175px;"onclick="window.print()">Generate Invoice</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="../plugins/raphael/raphael.min.js"></script>
+<script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard2.js"></script>
+
+<!-- Chart Bar -->
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Today'],
+      datasets: [{
+        label: 'Ultra Milk',
+        data: [10],
+        backgroundColor: '#FE9D9D',
+        borderColor: '#FE9D9D',
+        borderWidth: 1
+      },
+      {
+        label: 'Indomie',
+        data: [8],
+        backgroundColor: '#FE9D9D',
+        borderColor: '#FE9D9D',
+        borderWidth: 1
+      },
+      {
+        label: 'Ice Cream',
+        data: [6],
+        backgroundColor: '#FE9D9D',
+        borderColor: '#FE9D9D',
+        borderWidth: 1
+      }, 
+    ]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          gridLines: {
+            display: false
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            display: false
+      }
+        }],
+        xAxes: [{
+                barPercentage: 0.6,
+                categoryPercentage: 0.9
+            }]
+
+      }
+    }
+  });
+
+  function updateGraph(data) {
+    if (data === 'data1') {
+      chart.data.labels = ['Today'];
+      chart.data.datasets[0].data = [10];
+    } else if (data === 'data2') {
+      chart.data.labels = ['This Week'];
+      chart.data.datasets[0].data = [20];
+    }
+    chart.update();
+  }
+</script>
+
+<!-- Modal -->
+<script>
+  $('#invoiceModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var recipient = button.data('.modal-body')
+  var modal = $(this)
+  modal.find('.modal-body')
+})
+</script>
+
+<script>
+  $('.datepicker').datepicker();
+</script>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <!-- Datepicker -->
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Main jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js">
+    </script>
+    <script>
+      $('#sandbox-container .input-group.date').datepicker({
+      // startDate: date.now(),
+      startView: 1,
+      clearBtn: true,
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true
+    });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../dist/js/pages/product.js"></script>
+  <!-- Datepicker -->
+</body>
+</html>
