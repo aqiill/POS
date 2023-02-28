@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POS | Employee</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/custom.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" integrity="sha512-LeCmts7kEi09nKc+DwGJqDV+dNQi/W8/qb0oUSsBLzTYiBwxj0KBlAow2//jV7jwEHwSCPShRN2+IWwWcn1x7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs">
+<div class="wrapper"  style="overflow: hidden;">
+
+  <!-- Preloader -->
+  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div> -->
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand">
+    <!-- Size Controller -->
+    <span style="display: block;">
+      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"></i></a>
+    </span>
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link-custom" style="height: 90px;">
+      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" ; height: 43px; width: 197px;">
+      <span class="brand-text font-weight-light"></span>
+    </a>
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-base sidebar-no-expand" style="margin-top: 90px;">
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-custom" >
+      <!-- Sidebar Menu -->
+      <nav class="mt-0">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
+          <!-- MENU -->
+          <li class="nav-header">
+            <p>MENU</p>
+          </li>
+          <!-- Dashboard nav AKTIV -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+                <img class="nav-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
+                <p>
+                  Dashboard
+                </p>
+            </a>
+          </li>
+          <!-- Product Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
+              <p>
+                Product
+              </p>
+            </a>
+          </li>
+          <!-- Category Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/category_FILL0_wght400_GRAD0_opsz48.svg" alt="Category Logo">
+              <p>
+                Category
+              </p>
+            </a>
+          </li>
+          <!-- Report Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/summarize_FILL0_wght400_GRAD0_opsz48.svg" alt="Report Logo">
+              <p>
+                Report
+              </p>
+            </a>
+          </li>
+          <!-- Employee Nav -->
+          <li class="nav-item ">
+            <a href="pages/widgets.html" class="nav-link  active">
+              <div class="icon-active">
+              <img class="nav-icon" src="../docs/assets/img/badge_FILL0_wght400_GRAD0_opsz48.svg" alt="Employee Logo">
+              </div>
+              <div class="active-wrap" style="position: relative; padding-top: 2px;">
+              <p>
+                Employee
+              </p>
+            </div>
+            </a>
+          </li>
+          <!-- Member Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="Member Logo">
+              <p>
+                Member
+              </p>
+            </a>
+          </li>
+          
+
+          <!-- OTHERS -->
+          <li class="nav-header" >
+            <p>OTHER</p>
+          </li>
+          <!-- Settings Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="Settings Logo">
+              <p>
+                Settings
+              </p>
+            </a>
+          </li>
+          <!-- Help & Support Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="Help & Support Logo">
+              <p>
+                Help & Support
+              </p>
+            </a>
+          </li>
+          <!-- Sign Out Nav -->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <img class="nav-icon" src="../docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="Sign Out Logo">
+              <p>
+                Sign Out
+              </p>
+            </a>
+          </li>
+        </ul>
+        <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" style="border-radius: 10px;">
+          <div class="image">
+            <img
+              src="../dist/img/user2-160x160.jpg"
+              class="img-circle elevation-2"
+              alt="User Image"
+            />
+          </div>
+          <div class="info">
+            <a href="#" class="d-block" style="color: black;">Arya ganteng</a>
+          </div>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->    
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper row">
+    <section class="content col">
+      <div class="container-fluid">    
+        <!-- Main -->
+        <div class="row content-card">
+          <div class="col-lg-12">
+            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; height: 755px;">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <div class="add-export" style="display: flex;">
+                    <button class="btn bg-transparent table-cashier-button" data-toggle="modal" data-target=".bd-example-modal-sm">
+                      <iconify-icon icon="oi:plus"></iconify-icon>
+                      Add Cashier
+                    </button>
+                      <div class="modal fade bd-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document" >
+                          <div class="modal-content">
+                            <div class="modal-header" style="border: none;">
+                              <h5 class="modal-title">Add Cashier</h5>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                <label for="nameCashier1">Cashier Name</label>
+                                <input type="name" class="form-control" id="nameCashier1" aria-describedby="name" placeholder="Input Cashier Name">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Email Address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="examplHelp" placeholder="Input Email Address">
+                              </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between"style="border: none;">
+                              <button type="button" class="btn" data-dismiss="modal" style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;">Cancel</button>
+                              <button type="button" class="btn ms-auto" style="background-color: #5B7CFD; color: white; font-weight: normal; font-size: smaller; width: 100px; height: 35px;" id="saveBtn">Add Cashier</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <button class="btn bg-transparent table-cashier-button"onclick="window.print()">
+                      <iconify-icon icon="oi:share-boxed"></iconify-icon>
+                      Export Cashier</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body" style="padding: 0px 24px;">
+                <table class="table" id="myTable" data-page-length="10" style="width: 100%;">
+                  <thead>
+                    <tr class="text-muted fs-10">
+                      <td scope="col" style="width: 10%;">No</td>
+                      <td scope="col" style="width: 40%;">Cashier Name</td>
+                      <td scope="col" style="width: 40%;">Email </td>
+                      <td scope="col" style="width: 10%;">Actions</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">1</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">2</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">3</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">4</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">5</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">6</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">7</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">8</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">9</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">10</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">11</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10 drop-shadow" style="background-color: #F5F5F5; background-clip: padding-box; border: 1px solid #F5F5F5; border-radius: 10x;">
+                      <td scope="row">12</td>
+                      <td>Muhamad Aryadipura</td>
+                      <td>muhamadarya.8m19@gmail.com</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer"style="background-color:white; border-radius:10px;display: flex; justify-content: center;">
+                <ul class="pagination" id="pagination"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!--modal tambahan-->
+<div class="modal fade bd-example-modal-sm2" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document" >
+    <div class="modal-content">
+      <div class="modal-header" style="border: none;">
+        <h5 class="modal-title">Add Cashier</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nameCashier1">Cashier Name</label>
+          <input type="name" class="form-control" id="nameCashier1" aria-describedby="name" placeholder="Input Cashier Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email Address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="examplHelp" placeholder="Input Email Address">
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between"style="border: none;">
+        <button type="button" class="btn" data-dismiss="modal" style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;">Cancel</button>
+        <button type="button" class="btn ms-auto" style="background-color: #5B7CFD; color: white; font-weight: normal; font-size: smaller; width: 100px; height: 35px;" id="saveBtn">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal"tabindex="-1" role="dialog" id="confirmModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header"style="border: none;">
+        <h5 class="modal-title">Delete Cashier</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to delete this cashier ?</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-between"style="border: none;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;">Cancel</button>
+        <button type="button" class="btn btn-danger ms-auto" id="deleteBtn"  style="background-color: #D94343; color: white; font-weight: normal; font-size: smaller; width: 100px; height: 35px;" id="saveBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- REQUIRED SCRIPTS -->
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+
+  saveBtn.addEventListener('click', function() {
+
+    const modal = document.getElementById('myModal');
+    const modalObj = new bootstrap.Modal(modal);
+    modalObj.hide();
+  });
+</script>
+
+<script>
+  // Mendapatkan semua elemen dengan kelas "delete-row"
+  const deleteButtons = document.querySelectorAll('.delete-row');
+
+  // Mendapatkan elemen button "Hapus" pada modal konfirmasi
+  const confirmBtn = document.getElementById('deleteBtn');
+
+  // Menambahkan event listener untuk menangani event klik pada setiap elemen "delete-row"
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Mendapatkan baris dari tabel
+      const row = this.closest('tr');
+
+      // Menampilkan modal konfirmasi
+      $('#confirmModal').modal('show');
+
+      // Menambahkan event listener untuk menangani event klik pada button "Hapus" pada modal konfirmasi
+      confirmBtn.addEventListener('click', function() {
+        // Menghapus baris dari tabel
+        row.remove();
+
+        // Menutup modal konfirmasi
+        $('#confirmModal').modal('hide');
+      });
+    });
+  });
+</script>
+
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="../plugins/raphael/raphael.min.js"></script>
+<script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard2.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+
+<!--pagination-->
+<script>
+  function paginate() {
+  var table = document.getElementById("myTable");
+  var itemsPerPage = table.getAttribute("data-page-length");
+  var rowCount = table.rows.length - 1;
+  var numPages = Math.ceil(rowCount / itemsPerPage);
+  
+  var pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+  
+  for (var i = 1; i <= numPages; i++) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.setAttribute("href", "#");
+    a.innerHTML = i;
+    li.appendChild(a);
+    pagination.appendChild(li);
+  }
+}
+
+var pagination = document.getElementById("pagination");
+pagination.addEventListener("click", function(e) {
+  if (e.target.tagName === "A") {
+    showPage(e.target.innerHTML);
+  }
+});
+
+function showPage(page) {
+  var table = document.getElementById("myTable");
+  var itemsPerPage = table.getAttribute("data-page-length");
+  var start = (page - 1) * itemsPerPage + 1;
+  var end = start + parseInt(itemsPerPage) - 1;
+  var rowCount = table.rows.length;
+  
+  for (var i = 1; i < rowCount; i++) {
+    if (i < start || i > end) {
+      table.rows[i].style.display = "none";
+    } else {
+      table.rows[i].style.display = "";
+    }
+  }
+}
+
+paginate();
+showPage(1);
+
+</script>
+
+</body>
+</html>
