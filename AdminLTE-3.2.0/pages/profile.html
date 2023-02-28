@@ -183,13 +183,13 @@
               </button>
               </div>
               
-              <label class="font-weight-light" for="name" style="color:grey; margin-top:45px;">Role</label>
+              <label class="font-weight-light" for="role" style="color:grey; margin-top:45px;">Role</label>
               <input type="text" class="form-control-plaintext" id="role" value="Owner" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;" readonly>
 
-              <label class="font-weight-light" for="name" style="color:grey;margin-top:45px;">Email</label>
+              <label class="font-weight-light" for="mail" style="color:grey;margin-top:45px;">Email</label>
               <input type="email" class="form-control-plaintext" id="mail" value="aryadipura@gmail.com" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;" readonly>
               
-              <label class="font-weight-light" for="name" style="color:grey;margin-top:45px;">Password</label>
+              <label class="font-weight-light" for="pw" style="color:grey;margin-top:45px;">Password</label>
               <div class="input-group">
               <input type="password" class="form-control-plaintext" id="pw" value="Arya Ganteng" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; " readonly>
               <button class="btn btn-secondary input-group-text" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); background-color: rgba(1, 1, 1, 0); border-top: none; border-left: none; border-right: none; border-radius: 0px;" type="button" id="editButton2">
@@ -208,7 +208,7 @@
 
 <!-- REQUIRED SCRIPTS -->
 <script>
-var editIcon = document.querySelector('.bi-pencil');
+var editIcon = document.querySelector('.bi .bi-pencil');
 editIcon.addEventListener('click', function() {
   var targetId = this.getAttribute('data-target');
   var targetElement = document.querySelector(targetId);

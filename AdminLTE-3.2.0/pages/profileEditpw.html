@@ -178,7 +178,7 @@
           </div>
             <div class="form-group"style="margin-top:56px; ">
               <label class="font-weight-light" for="name" style="color:grey;">Email</label>
-              <input type="email" class="form-control-plaintext" id="name" value="aryadipura@gmail.com" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
+              <input type="email" class="form-control-plaintext" id="name" value="aryadipura@gmail.com" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;"readonly>
               
               <label class="font-weight-light" for="name" style="color:grey;margin-top:20px;">Old Password</label>
               <input type="password" class="form-control-plaintext" id="pw" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
@@ -189,7 +189,7 @@
               <label class="font-weight-light" for="name" style="color:grey;margin-top:20px;">Confirm Password</label>
               <input type="password" class="form-control-plaintext" id="pw" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
               <div class="mt-5 mb-5 d-flex justify-content-left">
-                <button type="submit" class="btn btn-primary btn-rounded" style="background-color: #5B7CFD; border-radius: 5px; width: 125px;">Save</button>
+                <button type="submit" class="btn btn-primary btn-rounded" id="saveBtn" style="background-color: #5B7CFD; border-radius: 5px; width: 125px;">Save </button>
               </div>
             </div>
             </div>
@@ -208,6 +208,17 @@ editIcon.addEventListener('click', function() {
   var targetElement = document.querySelector(targetId);
   targetElement.removeAttribute('readonly');
 });
+</script>
+
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+  saveBtn.addEventListener('click', function() {
+    const data = {
+      password : ""
+    };
+    localStorage.setItem("data", JSON.stringify(data));
+    window.location.href = document.referrer;
+  });
 </script>
 
 <!-- jQuery -->

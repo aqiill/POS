@@ -448,3 +448,8 @@ a.hidden-link {
   color: inherit;
   text-decoration: underline;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
