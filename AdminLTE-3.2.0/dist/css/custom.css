@@ -448,3 +448,11 @@ a.hidden-link {
   color: inherit;
   text-decoration: underline;
 }
+
+.nav-item img {
+  color: white;
+}
+
+.card-header h6 {
+  font-weight: 500;
+}
