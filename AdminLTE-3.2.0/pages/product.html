@@ -191,22 +191,22 @@
               <div class="card-body pl-4 pr-4 mr-4 ml-4" style="margin-bottom: 20px; overflow-x: scroll;">
                 <div class="card-deck">
                   <div class="card-columns">
-                  <div class="../card-susu float-right mb-2">
-                    <img src="../dist/img/susu.png" alt="Image">
-                    <div class="card-text mt-1 p-0 ml-1"style=" font-weight:bold;">Susu Ultra Milk Coklat 200ml
-                      <div class="progress" style="height: 6px; width: 162px; background-color: red; margin-top: 35px; border-radius: 10px;">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="row"style="margin-bottom:5px; font-weight:normal; font-size:small">
-                        <div class="col-md-6">
-                          9 days left
+                    <div class="card-susu float-right mb-2">
+                      <img src="../dist/img/susu.png" alt="Image">
+                      <div class="card-text mt-1 p-0 ml-1"style=" font-weight:bold;">Susu Ultra Milk Coklat 200ml
+                        <div class="progress" style="height: 6px; width: 162px; background-color: red; margin-top: 35px; border-radius: 10px;">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <div class="col-md-6 text-right">
-                          10/02/2023
+                        <div class="row"style="margin-bottom:5px; font-weight:normal; font-size:small">
+                          <div class="col-md-6">
+                            9 days left
+                          </div>
+                          <div class="col-md-6 text-right">
+                            10/02/2023
+                          </div>
                         </div>
-                      </div>
-                    </div> 
-                  </div> 
+                      </div> 
+                    </div>
                   <div class="card-susu float-right mb-2">
                     <img src="../dist/img/susu.png" alt="Image">
                     <div class="card-text mt-1 p-0 ml-1"style=" font-weight:bold;">Susu Ultra Milk Coklat 200ml
@@ -287,6 +287,38 @@
                       </div>
                     </div> 
                   </div> 
+                  <div class="card-susu float-right mb-2">
+                    <img src="../dist/img/susu.png" alt="Image">
+                    <div class="card-text mt-1 p-0 ml-1"style=" font-weight:bold;">Susu Ultra Milk Coklat 200ml
+                      <div class="progress" style="height: 6px; width: 162px; background-color: red; margin-top: 35px; border-radius: 10px;">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="row"style="margin-bottom:5px; font-weight:normal; font-size:small">
+                        <div class="col-md-6">
+                          9 days left
+                        </div>
+                        <div class="col-md-6 text-right">
+                          10/02/2023
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="card-susu float-right mb-2">
+                    <img src="../dist/img/susu.png" alt="Image">
+                    <div class="card-text mt-1 p-0 ml-1"style=" font-weight:bold;">Susu Ultra Milk Coklat 200ml
+                      <div class="progress" style="height: 6px; width: 162px; background-color: red; margin-top: 35px; border-radius: 10px;">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="row"style="margin-bottom:5px; font-weight:normal; font-size:small">
+                        <div class="col-md-6">
+                          9 days left
+                        </div>
+                        <div class="col-md-6 text-right">
+                          10/02/2023
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
                 </div>
                 </div>
               </div>
@@ -364,9 +396,8 @@
             </div>
           </div>
 
-          <!-- Transaction History -->
           <div class="col-lg-12">
-            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;">
+            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; height: auto;">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                   <div class="add-export" style="display: flex;">
@@ -374,7 +405,7 @@
                       <iconify-icon icon="oi:plus"></iconify-icon>
                       Add Product
                     </button>
-                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
                       <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
                           <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -396,7 +427,7 @@
                               <label for="exampleInputEmail1">Brand</label>
                               <input type="email" class="form-control" id="productBrand" aria-describedby="emailHelp" placeholder="Input Brand">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                               <label for="exampleFormControlSelect1">Category</label>
                               <select class="form-control" id="productCategory"
                               placeholder="Select Category">
@@ -406,7 +437,7 @@
                                 <option>4</option>
                                 <option>5</option>
                               </select>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                               <label for="productExpireDate">Expire Date</label>
                               <div id="sandbox-container">
@@ -429,13 +460,13 @@
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;"data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" style="background-color: #5B7CFD; color: white; font-weight: normal; font-size: smaller; width: 125px; height: 35px;" id="saveBtn">Save changes</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button class="btn bg-transparent table-product-button">
+                    <button class="btn bg-transparent table-product-button" onclick="window.print()">
                       <iconify-icon icon="oi:share-boxed"></iconify-icon>
                       Export Product</button>
                   </div>
@@ -484,16 +515,16 @@
                       <td>IDR 4,500.00</td>
                       <td>IDR 25,500.00</td>
                       <td>
-                        <button class="btn table-actions-button bg-transparent">
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
                           <iconify-icon icon="oi:pencil"></iconify-icon>
                         </button>
-                        <button class="btn table-actions-button bg-transparent">
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
                           <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
                         </button>
                       </td>
                     </tr>
                     <tr class="fs-10">
-                      <td scope="row">1</td>
+                      <td scope="row">2</td>
                       <td>
                         <img class="table-product-img" src="../dist/img/susu.png" alt="">
                       </td>
@@ -507,10 +538,10 @@
                       <td>IDR 4,500.00</td>
                       <td>IDR 25,500.00</td>
                       <td>
-                        <button class="btn table-actions-button bg-transparent">
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
                           <iconify-icon icon="oi:pencil"></iconify-icon>
                         </button>
-                        <button class="btn table-actions-button bg-transparent">
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
                           <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
                         </button>
                       </td>
@@ -537,68 +568,86 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- Modal Body-->
-<div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+
+<!--modal delete-->
+<div class="modal"tabindex="-1" role="dialog" id="confirmModal">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header bg"style="background-color: #5B7CFD; border-bottom-left-radius:45px; ">
-        <a class="modal-title" style="color: white;" id="invoiceModalLabel" >INVOICE</a>
-        <button type="button" class="close" style="color: white;" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header"style="border: none;">
+        <h5 class="modal-title">Delete Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="d-flex justify-content-center mt-2">
-          <img src="../dist/img/SimpleLogo.svg"style="width:35%; height:35%;" alt="logo">
-        </div>
-        <table class="table" style="border-collapse: collapse; border-spacing: 0;">
-          <tbody>
-            <tr>
-              <td style="border: none; border-bottom: 1px dotted #5B7CFD;">Date Order</td>
-              <td class="text-right"colspan="7" style="border: none;border-bottom: 1px dotted #5B7CFD;" >02/09/2023</td>
-            </tr>
-            <tr>
-              <td style="border: none;border-bottom: 1px dotted #5B7CFD;">Total Amount</td>
-              <td class="text-right" colspan="3" style="border: none;border-bottom: 1px dotted #5B7CFD;">IDR 25,000.00</td>
-            </tr>
-        </tbody>
-      </table>
-      <table class="table">
-        <thead class="bg" style="background-color: #5B7CFD; color: white;">
-          <tr>
-            <td colspan="2" class="text-right">Product</td>
-            <td class="text-right">Qty</td>
-            <td class="text-right">Price</td>
-          </tr>
-        </thead>
-        <tbody class="bg" style="background-color: #F2F3F8; color: black;">
-          <tr>
-            <td colspan="2" class="text-right">Product 1</td>
-            <td class="text-right">2</td>
-            <td class="text-right">IDR 25,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="2" class="text-right">Product 2</td>
-            <td class="text-right">4</td>
-            <td class="text-right">IDR 17,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Subtotal</td>
-            <td class="text-right">IDR 42,000.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Discount</td>
-            <td class="text-right">IDR 7,500.00</td>
-          </tr>
-          <tr>
-            <td colspan="3" class="text-right">Total</td>
-            <td class="text-right">IDR 34,500.00</td>
-          </tr>
-        </tbody>
-      </table>
+        <p>Are you sure want to delete this product ?</p>
       </div>
-      <div class="modal-footer d-flex justify-content-center mb-2">
-        <button class="btn btn-primary btn-rounded" style="background-color:#5B7CFD; border-radius:20px; width: 175px;"onclick="window.print()">Generate Invoice</button>
+      <div class="modal-footer d-flex justify-content-between"style="border: none;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;">Cancel</button>
+        <button type="button" class="btn btn-danger ms-auto" id="deleteBtn"  style="background-color: #D94343; color: white; font-weight: normal; font-size: smaller; width: 100px; height: 35px;">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal edit-->
+<div class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> -->
+      <div class="modal-header">
+        <h5 class="modal-title">Update Product</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Image</label>
+          <input type="file" class="form-control" id="productImage" aria-describedby="emailHelp" placeholder="Image's src">
+        </div>
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="email" class="form-control" id="productName" aria-describedby="emailHelp" placeholder="Input Product Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Brand</label>
+          <input type="email" class="form-control" id="productBrand" aria-describedby="emailHelp" placeholder="Input Brand">
+        </div>
+        <!-- <div class="form-group">
+          <label for="exampleFormControlSelect1">Category</label>
+          <select class="form-control" id="productCategory"
+          placeholder="Select Category">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div> -->
+        <div class="form-group">
+          <label for="productExpireDate">Expire Date</label>
+          <div id="sandbox-container">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="productExpireDate"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Stocks</label>
+          <input type="email" class="form-control" id="productStocksAmount" aria-describedby="emailHelp" placeholder="Eg. 200">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Capital Price</label>
+          <input type="email" class="form-control" id="productCapitalPrice" aria-describedby="emailHelp" placeholder="Eg. IDR 25,000.00">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Price</label>
+          <input type="email" class="form-control" id="productPrice" aria-describedby="emailHelp" placeholder="Eg. IDR 35,000.00">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" style="background-color: white; color: black; font-weight: normal; font-size: smaller; width: 100px; height: 35px; border: none;"data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" style="background-color: #5B7CFD; color: white; font-weight: normal; font-size: smaller; width: 125px; height: 35px;" id="saveBtn">Save changes</button>
       </div>
     </div>
   </div>
@@ -628,77 +677,6 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard2.js"></script>
 
-<!-- Chart Bar -->
-<script>
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Today'],
-      datasets: [{
-        label: 'Ultra Milk',
-        data: [10],
-        backgroundColor: '#FE9D9D',
-        borderColor: '#FE9D9D',
-        borderWidth: 1
-      },
-      {
-        label: 'Indomie',
-        data: [8],
-        backgroundColor: '#FE9D9D',
-        borderColor: '#FE9D9D',
-        borderWidth: 1
-      },
-      {
-        label: 'Ice Cream',
-        data: [6],
-        backgroundColor: '#FE9D9D',
-        borderColor: '#FE9D9D',
-        borderWidth: 1
-      }, 
-    ]
-    },
-    options: {
-      legend: {
-        display: false
-      },
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }],
-        xAxes: [{
-          gridLines: {
-            display: false
-          }
-        }],
-        xAxes: [{
-          ticks: {
-            display: false
-      }
-        }],
-        xAxes: [{
-                barPercentage: 0.6,
-                categoryPercentage: 0.9
-            }]
-
-      }
-    }
-  });
-
-  function updateGraph(data) {
-    if (data === 'data1') {
-      chart.data.labels = ['Today'];
-      chart.data.datasets[0].data = [10];
-    } else if (data === 'data2') {
-      chart.data.labels = ['This Week'];
-      chart.data.datasets[0].data = [20];
-    }
-    chart.update();
-  }
-</script>
-
 <!-- Modal -->
 <script>
   $('#invoiceModal').on('show.bs.modal', function (event) {
@@ -711,6 +689,46 @@
 
 <script>
   $('.datepicker').datepicker();
+</script>
+
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+
+  saveBtn.addEventListener('click', function() {
+
+    const modal = document.getElementById('myModal');
+    const modalObj = new bootstrap.Modal(modal);
+    modalObj.hide();
+  });
+</script>
+
+<!--delete-->
+<script>
+  // Mendapatkan semua elemen dengan kelas "delete-row"
+  const deleteButtons = document.querySelectorAll('.delete-row');
+
+  // Mendapatkan elemen button "Hapus" pada modal konfirmasi
+  const confirmBtn = document.getElementById('deleteBtn');
+
+  // Menambahkan event listener untuk menangani event klik pada setiap elemen "delete-row"
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Mendapatkan baris dari tabel
+      const row = this.closest('tr');
+
+      // Menampilkan modal konfirmasi
+      $('#confirmModal').modal('show');
+
+      // Menambahkan event listener untuk menangani event klik pada button "Hapus" pada modal konfirmasi
+      confirmBtn.addEventListener('click', function() {
+        // Menghapus baris dari tabel
+        row.remove();
+
+        // Menutup modal konfirmasi
+        $('#confirmModal').modal('hide');
+      });
+    });
+  });
 </script>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
