@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>POS | Dashboard</title>
+  <title>POS | Product</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
   
 </head>
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs">
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs" style="overflow-x: hidden;">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -64,24 +64,24 @@
           </li>
           <!-- Dashboard nav AKTIV -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <div class="icon-active">
+            <a href="#" class="nav-link">
                 <img class="nav-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
-              </div>
-              <div class="active-wrap" style="position: relative; padding-top: 2px;">
                 <p>
                   Dashboard
                 </p>
-              </div>
             </a>
           </li>
           <!-- Product Nav -->
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="pages/widgets.html" class="nav-link active">
+              <div class="icon-active">
               <img class="nav-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
+              </div>
+              <div class="active-wrap" style="position: relative; padding-top: 2px;"></div>
               <p>
                 Product
               </p>
+              <div class="active-wrap" style="position: relative; padding-top: 2px;"></div>
             </a>
           </li>
           <!-- Category Nav -->
@@ -172,7 +172,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper row">
+  <div class="content-wrapper row" >
     <!-- Main content -->
     <section class="content col">
       <div class="container-fluid">
@@ -484,6 +484,7 @@
                 </div>
               </div>
               <div class="card-body" style="padding: 0px 24px;">
+                <div class="scrollable-table" style="max-height: 300px; overflow-y: auto;">
                 <table class="table">
                   <thead>
                     <tr class="text-muted fs-10">
@@ -546,8 +547,101 @@
                         </button>
                       </td>
                     </tr>
+                    <tr class="fs-10">
+                      <td scope="row">3</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>Ultra Jaya</td>
+                      <td>
+                        Milk
+                      </td>
+                      <td>22/02/2023</td>
+                      <td>500</td>
+                      <td>IDR 4,500.00</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10">
+                      <td scope="row">4</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>Ultra Jaya</td>
+                      <td>
+                        Milk
+                      </td>
+                      <td>22/02/2023</td>
+                      <td>500</td>
+                      <td>IDR 4,500.00</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10">
+                      <td scope="row">5</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>Ultra Jaya</td>
+                      <td>
+                        Milk
+                      </td>
+                      <td>22/02/2023</td>
+                      <td>500</td>
+                      <td>IDR 4,500.00</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="fs-10">
+                      <td scope="row">6</td>
+                      <td>
+                        <img class="table-product-img" src="../dist/img/susu.png" alt="">
+                      </td>
+                      <td>Susu Ultra Milk Coklat 200ml</td>
+                      <td>Ultra Jaya</td>
+                      <td>
+                        Milk
+                      </td>
+                      <td>22/02/2023</td>
+                      <td>500</td>
+                      <td>IDR 4,500.00</td>
+                      <td>IDR 25,500.00</td>
+                      <td>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow"data-toggle="modal" data-target=".bd-example-modal-sm2" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:pencil"></iconify-icon>
+                        </button>
+                        <button class="btn table-actions-button bg-transparent border drop-shadow ml-2 delete-row" style="border-radius: 50%;">
+                          <iconify-icon icon="oi:trash" style="margin-left: 2px"></iconify-icon>
+                        </button>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
+              </div>
               </div>
             </div>
           </div>
