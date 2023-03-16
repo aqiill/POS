@@ -27,42 +27,42 @@
     }
   </style>
 
-<body class="hold-transition login-page" style="background-color: #E7EEF8;">
-  <div class="login-box">
+<body class="hold-transition login-page" id="login-page" style="background-color: #E7EEF8;">
+  <div class="login-box" id="login-box">
   <!-- /.login-logo -->
-    <div class="card">
-      <div class="login-logo mt mb-5" style="margin-top: 50px;">
+    <div class="card" id="login-card">
+      <div class="login-logo mt mb-5" id="login-logo" style="margin-top: 50px;">
           <img src="../../dist/img/SimpleLogo.svg" style="width: 80%; height: 80%;"alt="logo">
       </div>
-      <div class="card-body login-card-body">
+      <div class="card-body login-card-body" id="login-body">
         <form action="#!" method="post" id="form-login" class="needs-validation" novalidate>
-          <div class="form-group">
-            <label class="font-weight-lighter mb-0" for="email1">Email</label>
-            <div class="input-group">
-              <input type="email" class="form-control-plaintext mt-0"  style="border-bottom: 2px solid #000000; "id="email1" placeholder="Enter email" required> 
-              <div class="invalid-feedback mt"style="position: absolute; margin-top: 40px; font-size:11px;">
-                <i class="fas fa-exclamation-triangle"></i>
+          <div class="form-group" id="email-form-group">
+            <label class="font-weight-lighter mb-0" id="email-form-font" for="email1">Email</label>
+            <div class="input-group" id="email-form-input-">
+              <input type="email" class="form-control-plaintext mt-0" style="border-bottom: 2px solid #000000; "id="email1" placeholder="Enter email" required> 
+              <div class="invalid-feedback mt"id="email-form-invalid"style="position: absolute; margin-top: 40px; font-size:11px;">
+                <i class="fas fa-exclamation-triangle" id="email-invalid-triangle"></i>
                   Invalid email
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label class="font-weight-lighter mt-2 mb-0" for="password">Password</label>
-            <div class="input-group">
+          <div class="form-group" id="password-form-group">
+            <label class="font-weight-lighter mt-2 mb-0" id="password-form-font" for="password">Password</label>
+            <div class="input-group" id="email-form-input">
               <input type="password" class="form-control-plaintext mt-0" style="border-bottom: 2px solid #000000;" id="password" placeholder="Enter password" required>
-              <div class="input-group-append">
+              <div class="input-group-append" id="password-form-append">
                 <button class="btn" type="button" style="border-bottom: 2px solid #000000;" id="togglePasswordVisibility">
-                  <i class="fas fa-eye"></i>
+                  <i class="fas fa-eye" id="password-eye-icon"></i>
                 </button>
               </div>
-              <div class="invalid-feedback mt" style="position: absolute; margin-top: 40px;font-size: 11px;">
-                <i class="fas fa-exclamation-triangle"></i>
+              <div class="invalid-feedback mt" id="password-form-invalid" style="position: absolute; margin-top: 40px;font-size: 11px;">
+                <i class="fas fa-exclamation-triangle" id="password-invalid-triangle"></i>
                   Invalid password
               </div>
             </div>
           </div>
-          <div class="mt mb-5 d-flex justify-content-center" style="margin-top: 80px;">
-            <button type="submit" class="btn btn-primary btn-rounded" style="background-color: #5B7CFD; border-radius: 50px; width: 175px;">Login</button>
+          <div class="mt mb-5 d-flex justify-content-center" id="login-submit-position" style="margin-top: 80px;">
+            <button type="submit" class="btn btn-primary btn-rounded" id="login-submit-button" style="background-color: #5B7CFD; border-radius: 50px; width: 175px;">Login</button>
           </div>
         </form>
       </div>

@@ -19,8 +19,8 @@
 </head><!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
 </head>
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs"style="overflow-x:hidden;">
-<div class="wrapper">
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs" id="profile-page" style="overflow-x:hidden;">
+<div class="wrapper" id="profile-wrapper" >
   <!-- Preloader -->
   <!-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
@@ -28,22 +28,22 @@
 
   <!-- Navbar -->
 
-  <nav class="main-header navbar navbar-expand">
+  <nav class="main-header navbar navbar-expand" id="profile-navbar" >
     <!-- Size Controller -->
     <span style="display: block;">
-      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"></i></a>
+      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars" id="profile-push-menu" ></i></a>
     </span>
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link-custom" style="height: 90px;">
-      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" ; height: 43px; width: 197px;>
-      <span class="brand-text font-weight-light"></span>
+    <a href="index3.html" class="brand-link-custom" id="profile-logo" style="height: 90px;">
+      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" id="profile-logo-image" ; height: 43px; width: 197px;>
+      <span class="brand-text font-weight-light" id="profile-logo-font"></span>
     </a>
     
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+    <ul class="navbar-nav ml-auto" id="profile-nav-fullscreen">
+      <li class="nav-item"id="editprofile-fullscreen-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button"id="editprofile-fullscreen-link">
+          <i class="fas fa-expand-arrows-alt"id="editprofile-fullscreen-icon"></i>
         </a>
       </li>
     </ul>
@@ -51,65 +51,65 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-base sidebar-no-expand" style="margin-top: 90px;">
+  <aside class="main-sidebar sidebar-base sidebar-no-expand" id="profile-sidebar" style="margin-top: 90px;">
     <!-- Sidebar -->
-    <div class="sidebar sidebar-custom" >
+    <div class="sidebar sidebar-custom" id="profile-sidebar-custom">
       <!-- Sidebar Menu -->
-      <nav class="mt-0">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
+      <nav class="mt-0" id="profile-sidebar-nav">
+        <ul class="nav nav-pills nav-sidebar flex-column" id="profile-sidebar-ul" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
           <!-- MENU -->
-          <li class="nav-header">
+          <li class="nav-header" id="profile-sidebar-menu">
             <p>MENU</p>
           </li>
           <!-- Dashboard nav AKTIV -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-                <img class="nav-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
+          <li class="nav-item" id="profile-sidebar-dashboard">
+            <a href="#" class="nav-link" id="profile-sidebar-dashboard-link">
+                <img class="nav-icon" id="profile-sidebar-dashoard-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
                 <p>
                   Dashboard
                 </p>
             </a>
           </li>
           <!-- Product Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
+          <li class="nav-item" id="profile-sidebar-product">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-product-link">
+              <img class="nav-icon" id="profile-sidebar-product-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
               <p>
                 Product
               </p>
             </a>
           </li>
           <!-- Category Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/category_FILL0_wght400_GRAD0_opsz48.svg" alt="Category Logo">
+          <li class="nav-item" id="profile-sidebar-category">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-category-link">
+              <img class="nav-icon" id="profile-sidebar-category-icon" src="../docs/assets/img/category_FILL0_wght400_GRAD0_opsz48.svg" alt="Category Logo">
               <p>
                 Category
               </p>
             </a>
           </li>
           <!-- Report Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/summarize_FILL0_wght400_GRAD0_opsz48.svg" alt="Report Logo">
+          <li class="nav-item" id="profile-sidebar-report">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-report-link">
+              <img class="nav-icon" id="profile-sidebar-report-icon" src="../docs/assets/img/summarize_FILL0_wght400_GRAD0_opsz48.svg" alt="Report Logo">
               <p>
                 Report
               </p>
             </a>
           </li>
           <!-- Employee Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/badge_FILL0_wght400_GRAD0_opsz48.svg" alt="Employee Logo">
+          <li class="nav-item" id="profile-sidebar-employee">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-employee-link">
+              <img class="nav-icon" id="profile-sidebar-employee-icon" src="../docs/assets/img/badge_FILL0_wght400_GRAD0_opsz48.svg" alt="Employee Logo">
               <p>
                 Employee
               </p>
             </a>
           </li>
           <!-- Member Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="Member Logo">
+          <li class="nav-item" id="profile-sidebar-member">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-member-link">
+              <img class="nav-icon" id="profile-sidebar-member-icon" src="../docs/assets/img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="Member Logo">
               <p>
                 Member
               </p>
@@ -118,47 +118,47 @@
           
 
           <!-- OTHERS -->
-          <li class="nav-header" >
+          <li class="nav-header" id="profile-sidebar-other">
             <p>OTHER</p>
           </li>
           <!-- Settings Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="Settings Logo">
+          <li class="nav-item" id="profile-sidebar-setting">
+            <a href="pages/widgets.html" class="nav-link" id="profile-sidebar-setting-link">
+              <img class="nav-icon" id="profile-sidebar-setting-icon" src="../docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="Settings Logo">
               <p>
                 Settings
               </p>
             </a>
           </li>
           <!-- Help & Support Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="Help & Support Logo">
+          <li class="nav-item"id="profile-sidebar-help">
+            <a href="pages/widgets.html" class="nav-link"id="profile-sidebar-help-link">
+              <img class="nav-icon" id="profile-sidebar-help-icon"src="../docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="Help & Support Logo">
               <p>
                 Help & Support
               </p>
             </a>
           </li>
           <!-- Sign Out Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="Sign Out Logo">
+          <li class="nav-item"id="profile-sidebar-signtout">
+            <a href="pages/widgets.html" class="nav-link"id="profile-sidebar-signout-link">
+              <img class="nav-icon" id="profile-sidebar-signout-icon"src="../docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="Sign Out Logo">
               <p>
                 Sign Out
               </p>
             </a>
           </li>
         </ul>
-        <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" style="border-radius: 10px;">
-          <div class="image">
+        <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" id="profile-sidebar-profiles"style="border-radius: 10px;">
+          <div class="image"id="profile-sidebar-profiles-image">
             <img
               src="../dist/img/user2-160x160.jpg"
-              class="img-circle elevation-2"
+              class="img-circle elevation-2" id="profile-sidebar-image-circle"
               alt="User Image"
             />
           </div>
-          <div class="info">
-            <a href="#" class="d-block" style="color: black;">Arya ganteng</a>
+          <div class="info"id="profile-sidebar-profiles-info">
+            <a href="#" class="d-block" id="profile-sidebar-profiles-link"style="color: black;">Arya ganteng</a>
           </div>
       </nav>
       <!-- /.sidebar-menu -->
@@ -166,35 +166,35 @@
     <!-- /.sidebar -->    
   </aside>
   
-  <div class="content-wrapper mt-0 pt-0 mb-0 pb-0"style="background-color: #E7EEF8; display:flex; justify-content:center; align-items:center;">  
-    <div class="box">
-       <div class="card"style="height:755px; width:750px;">
-         <div class="card-body">
-          <div class="profile-pic mt-3"style="margin-left:280px;">
+  <div class="content-wrapper mt-0 pt-0 mb-0 pb-0"id="profile-wrapper"style="background-color: #E7EEF8; display:flex; justify-content:center; align-items:center;">  
+    <div class="box"id="profile-box">
+       <div class="card" id="profile-card"style="height:755px; width:750px;">
+         <div class="card-body" id="profile-card-body">
+          <div class="profile-pic mt-3"style="margin-left:280px;"id="profile-card-profpict">
             <img src="https://via.placeholder.com/150" alt="Profile Picture">
-            <input type="file" class="file-upload">
+            <input type="file" class="file-upload" id="profile-card-uploadpict">
           </div>
-            <div class="form-group"style="margin-top:56px; ">
-              <label class="font-weight-light" for="name" style="color:grey;">Full Name</label>
-              <div class="input-group">
+            <div class="form-group"style="margin-top:56px;"id="profile-form">
+              <label class="font-weight-light" for="name" style="color:grey;"id="profile-form-name">Full Name</label>
+              <div class="input-group"id="profile-form-group-name">
               <input type="text" class="form-control-plaintext" id="name" value="Arya Ganteng" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; " readonly>
               <button class="btn btn-secondary input-group-text" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8);background-color: rgba(1, 1, 1, 0);border-top: none; border-left: none; border-right: none; border-radius: 0px;" type="button" id="editButton">
-                <i class="bi bi-pencil-fill" style ="color: black;" data-target="#name"></i>
+                <i class="bi bi-pencil-fill" style ="color: black;" data-target="#name"id="profile-form-name-pencil"></i>
               </button>
               </div>
               
-              <label class="font-weight-light" for="role" style="color:grey; margin-top:45px;">Role</label>
+              <label class="font-weight-light"id="profile-form-role" for="role" style="color:grey; margin-top:45px;">Role</label>
               <input type="text" class="form-control-plaintext" id="role" value="Owner" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;" readonly>
 
-              <label class="font-weight-light" for="mail" style="color:grey;margin-top:45px;">Email</label>
+              <label class="font-weight-light" id="profile-form-email"for="mail" style="color:grey;margin-top:45px;">Email</label>
               <input type="email" class="form-control-plaintext" id="mail" value="aryadipura@gmail.com" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;" readonly>
               
-              <label class="font-weight-light" for="pw" style="color:grey;margin-top:45px;">Password</label>
+              <label class="font-weight-light" id="profile-form-password"for="pw" style="color:grey;margin-top:45px;">Password</label>
               <div class="input-group">
               <input type="password" class="form-control-plaintext" id="pw" value="Arya Ganteng" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; " readonly>
               <button class="btn btn-secondary input-group-text" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); background-color: rgba(1, 1, 1, 0); border-top: none; border-left: none; border-right: none; border-radius: 0px;" type="button" id="editButton2">
                 <a href="/pages/profileEditpw.html">
-                  <i class="bi bi-pencil-fill" style ="color: black;"></i>
+                  <i class="bi bi-pencil-fill" style ="color: black;"id="profile-form-password-pencil"></i>
                 </a>
               </button>
               </div>

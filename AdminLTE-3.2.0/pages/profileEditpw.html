@@ -19,30 +19,30 @@
 </head><!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
 </head>
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs"style="overflow-x:hidden;">
-<div class="wrapper">
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-mini-xs"style="overflow-x:hidden;" id="editprofile-page">
+<div class="wrapper"id="editprofile-wrapper">
   <!-- Preloader -->
   <!-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div> -->
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand">
+  <nav class="main-header navbar navbar-expand"id="editprofile-navbar">
     <!-- Size Controller -->
     <span style="display: block;">
-      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"></i></a>
+      <a data-widget="pushmenu" href="#" role="button" style="position:sticky; margin-left: 23px; margin-right: 13px;"><i class="fas fa-bars"id="editprofile-push-menu"></i></a>
     </span>
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link-custom" style="height: 90px;">
-      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" ; height: 43px; width: 197px;>
-      <span class="brand-text font-weight-light"></span>
+    <a href="index3.html" class="brand-link-custom"id="editprofile-logo"style="height: 90px;">
+      <img src="../docs/assets/img/POS_logo.png" alt="AdminLTE Logo" class="brand-image" id="editprofile-logo-image"; height: 43px; width: 197px;>
+      <span class="brand-text font-weight-light"id="editprofile-logo-font"></span>
     </a>
     
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+    <ul class="navbar-nav ml-auto" id="editprofile-nav-fullscreen">
+      <li class="nav-item"id="editprofile-fullscreen-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button"id="editprofile-fullscreen-link">
+          <i class="fas fa-expand-arrows-alt"id="editprofile-fullscreen-icon"></i>
         </a>
       </li>
     </ul>
@@ -50,65 +50,65 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-base sidebar-no-expand" style="margin-top: 90px;">
+  <aside class="main-sidebar sidebar-base sidebar-no-expand" id="editprofile-sidebar"style="margin-top: 90px;">
     <!-- Sidebar -->
-    <div class="sidebar sidebar-custom" >
+    <div class="sidebar sidebar-custom" id="editprofile-sidebar-custom">
       <!-- Sidebar Menu -->
-      <nav class="mt-0">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
+      <nav class="mt-0"id="editprofile-sidebar-nav">
+        <ul class="nav nav-pills nav-sidebar flex-column"id="editprofile-sidebar-ul" data-widget="treeview" role="menu" data-accordion="false" style="margin-top: 16px; ">
           <!-- MENU -->
-          <li class="nav-header">
+          <li class="nav-header"id="editprofile-sidebar-menu">
             <p>MENU</p>
           </li>
           <!-- Dashboard nav AKTIV -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-                <img class="nav-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
+          <li class="nav-item"id="editprofile-sidebar-dashboard">
+            <a href="#" class="nav-link"id="editprofile-sidebar-dashboard-link">
+                <img class="nav-icon"id="editprofile-sidebar-dashboard-icon" src="../docs/assets/img/dashboard_FILL0_wght400_GRAD0_opsz48.svg" alt="Dashboard Logo">
                 <p>
                   Dashboard
                 </p>
             </a>
           </li>
           <!-- Product Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
+          <li class="nav-item"id="editprofile-sidebar-product">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-dashboard-link">
+              <img class="nav-icon"id="editprofile-sidebar-dashboard-icon" src="../docs/assets/img/file-tray-stacked-outline.svg" alt="Product Logo">
               <p>
                 Product
               </p>
             </a>
           </li>
           <!-- Category Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/category_FILL0_wght400_GRAD0_opsz48.svg" alt="Category Logo">
+          <li class="nav-item"id="editprofile-sidebar-category">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-category-link">
+              <img class="nav-icon" src="../docs/assets/img/category_FILL0_wght400_GRAD0_opsz48.svg" alt="Category Logo"id="editprofile-sidebar-category-icon">
               <p>
                 Category
               </p>
             </a>
           </li>
           <!-- Report Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/summarize_FILL0_wght400_GRAD0_opsz48.svg" alt="Report Logo">
+          <li class="nav-item"id="editprofile-sidebar-report">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-report-link">
+              <img class="nav-icon" src="../docs/assets/img/summarize_FILL0_wght400_GRAD0_opsz48.svg" alt="Report Logo"id="editprofile-sidebar-report-icon">
               <p>
                 Report
               </p>
             </a>
           </li>
           <!-- Employee Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/badge_FILL0_wght400_GRAD0_opsz48.svg" alt="Employee Logo">
+          <li class="nav-item"id="editprofile-sidebar-employee">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-employee-link">
+              <img class="nav-icon" src="../docs/assets/img/badge_FILL0_wght400_GRAD0_opsz48.svg" alt="Employee Logo"id="editprofile-sidebar-employee-icon">
               <p>
                 Employee
               </p>
             </a>
           </li>
           <!-- Member Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="Member Logo">
+          <li class="nav-item"id="editprofile-sidebar-member">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-member-link">
+              <img class="nav-icon" src="../docs/assets/img/group_FILL0_wght400_GRAD0_opsz48.svg" alt="Member Logo"id="editprofile-sidebar-member-icon">
               <p>
                 Member
               </p>
@@ -117,47 +117,47 @@
           
 
           <!-- OTHERS -->
-          <li class="nav-header" >
+          <li class="nav-header"id="editprofile-sidebar-other" >
             <p>OTHER</p>
           </li>
           <!-- Settings Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="Settings Logo">
+          <li class="nav-item"id="editprofile-sidebar-setting">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-setting-link">
+              <img class="nav-icon" src="../docs/assets/img/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="Settings Logo"id="editprofile-sidebar-setting-icon">
               <p>
                 Settings
               </p>
             </a>
           </li>
           <!-- Help & Support Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="Help & Support Logo">
+          <li class="nav-item"id="editprofile-sidebar-help">
+            <a href="pages/widgets.html" class="nav-link"id="editprofile-sidebar-help-link">
+              <img class="nav-icon" id="editprofile-sidebar-help-icon" src="../docs/assets/img/support_agent_FILL0_wght400_GRAD0_opsz48.svg" alt="Help & Support Logo">
               <p>
                 Help & Support
               </p>
             </a>
           </li>
           <!-- Sign Out Nav -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <img class="nav-icon" src="../docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="Sign Out Logo">
+          <li class="nav-item"id="editprofile-sidebar-signout">
+            <a href="pages/widgets.html" class="nav-link" id="editprofile-sidebar-signout-link">
+              <img class="nav-icon" src="../docs/assets/img/logout_FILL0_wght400_GRAD0_opsz48.svg" alt="Sign Out Logo"id="editprofile-sidebar-signout-icon">
               <p>
                 Sign Out
               </p>
             </a>
           </li>
         </ul>
-        <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" style="border-radius: 10px;">
-          <div class="image">
+        <div class="user-panel mt-3 pb-3 pt-3 mb-5 d-flex bg-light mr-4 ml-4" id="editprofile-sidebar-profiles"style="border-radius: 10px;">
+          <div class="image" id="editprofile-sidebar-profiles-image">
             <img
               src="../dist/img/user2-160x160.jpg"
-              class="img-circle elevation-2"
+              class="img-circle elevation-2" id="editprofile-sidebar-image-circle"
               alt="User Image"
             />
           </div>
           <div class="info">
-            <a href="#" class="d-block" style="color: black;">Arya ganteng</a>
+            <a href="#" class="d-block" id="editprofile-sidebar-profiles-link" style="color: black;">Arya ganteng</a>
           </div>
       </nav>
       <!-- /.sidebar-menu -->
@@ -165,30 +165,30 @@
     <!-- /.sidebar -->    
   </aside>
   
-  <div class="content-wrapper mt-0 pt-0 mb-0 pb-0"style="background-color: #E7EEF8; display:flex; justify-content:center; align-items:center;">  
-    <div class="box">
-       <div class="card"style="height:755px; width:750px;">
-        <button type="button" class="btn btn-secondary position-absolute top-0 start-0 m-3" style="background-color: rgba(1, 1, 1, 0); border: none;"  onclick="history.back()">
-          <i class="fas fa-arrow-left" style="color: black;" ></i>
+  <div class="content-wrapper mt-0 pt-0 mb-0 pb-0" id="editprofile-wrapper" style="background-color: #E7EEF8; display:flex; justify-content:center; align-items:center;">  
+    <div class="box"id="editprofile-box">
+       <div class="card" id="editprofile-card"style="height:755px; width:750px;">
+        <button type="button" class="btn btn-secondary position-absolute top-0 start-0 m-3" id="editprofile-back"style="background-color: rgba(1, 1, 1, 0); border: none;"  onclick="history.back()">
+          <i class="fas fa-arrow-left" id="editprofile-back-icon"style="color: black;" ></i>
         </button>
-         <div class="card-body">
-          <div class="profile-pic mt-3"style="margin-left:280px;">
+         <div class="card-body"id="editprofile-card-body">
+          <div class="profile-pic mt-3"style="margin-left:280px;"id="editprofile-card-profpict">
             <img src="https://via.placeholder.com/150" alt="Profile Picture">
-            <input type="file" class="file-upload">
+            <input type="file" class="file-upload"id="editprofile-card-uploadpict">
           </div>
-            <div class="form-group"style="margin-top:56px; ">
-              <label class="font-weight-light" for="name" style="color:grey;">Email</label>
+            <div class="form-group"style="margin-top:56px;"id="editprofile-form">
+              <label class="font-weight-light" for="name" style="color:grey;"id="editprofile-form-email">Email</label>
               <input type="email" class="form-control-plaintext" id="name" value="aryadipura@gmail.com" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger;"readonly>
               
-              <label class="font-weight-light" for="name" style="color:grey;margin-top:20px;">Old Password</label>
-              <input type="password" class="form-control-plaintext" id="pw" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
+              <label class="font-weight-light"id="editprofile-form-oldpassword" for="name" style="color:grey;margin-top:20px;">Old Password</label>
+              <input type="password" class="form-control-plaintext" id="pwold" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
               
-              <label class="font-weight-light" for="name" style="color:grey;margin-top:20px;">New Password</label>
-              <input type="password" class="form-control-plaintext" id="pw" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
+              <label class="font-weight-light"id="editprofile-form-newpassword" for="name" style="color:grey;margin-top:20px;">New Password</label>
+              <input type="password" class="form-control-plaintext" id="pwnew" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
               
-              <label class="font-weight-light" for="name" style="color:grey;margin-top:20px;">Confirm Password</label>
-              <input type="password" class="form-control-plaintext" id="pw" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
-              <div class="mt-5 mb-5 d-flex justify-content-left">
+              <label class="font-weight-light" id="editprofile-confirmpassword" for="name" style="color:grey;margin-top:20px;">Confirm Password</label>
+              <input type="password" class="form-control-plaintext" id="pwconfirm" value="" style="border-bottom: 3px solid rgba(211, 211, 211, 0.8); font-size: larger; ">
+              <div class="mt-5 mb-5 d-flex justify-content-left"id="editprofile-button">
                 <button type="submit" class="btn btn-primary btn-rounded" id="saveBtn" style="background-color: #5B7CFD; border-radius: 5px; width: 125px;">Save </button>
               </div>
             </div>
