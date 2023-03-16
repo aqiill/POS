@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>POS | Dashboard</title>
+  <title>POS | Cashier</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -192,7 +192,7 @@
                 </table>
               </div>
             </div>
-            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px;">
+            <div class="card" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; height: 300px;">
               <div class="card-header border-0 d-flex justify-content-between">
                 <h6>Payment Method</h6>
                 <h6>Payment Details</h6>
@@ -516,5 +516,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="../dist/js/pages/product.js"></script>
   <!-- Datepicker -->
+  <script>
+    window.onload = function() {
+      document.getElementById("form1").focus();
+    }
+  </script>
 </body>
 </html>
