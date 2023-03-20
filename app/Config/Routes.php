@@ -38,7 +38,8 @@ $routes->resource('users');
 
 $routes->get('produk/stok/', 'Produk::stok/');
 $routes->get('produk/expired/', 'Produk::expired/');
-$routes->get('produk/kategori/{id_produk}', 'Produk::produk_kategori/');
+$routes->get('produk/kategori/', 'Produk::produk_kategori/');
+$routes->get('produk/kategori/(:num)', 'Produk::produk_kategori/$1');
 $routes->resource('produk');
 
 $routes->get('transaksi/best_selling/', 'Transaksi::best_selling/');
