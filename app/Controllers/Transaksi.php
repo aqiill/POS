@@ -266,8 +266,11 @@ class Transaksi extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $model = new M_transaksi();
+            $model_produk = new M_produk();
+
             $total_pendapatan = $model->total_pendapatan();
             $total_harian = $model->total_harian();
+            $total_profit = $model_produk->total_profit();
 
             if ($total_pendapatan != "" && $total_harian != "") {
                 $response = [
@@ -275,6 +278,7 @@ class Transaksi extends ResourceController
                     'message' => 'Data Pendapatan',
                     'data' => [
                         'total_pendapatan' => $total_pendapatan['total'],
+                        'total_profit' => $total_profit['total_keuntungan'],
                         'total_harian' => $total_harian['total']
                     ]
                 ];

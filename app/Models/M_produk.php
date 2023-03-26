@@ -59,4 +59,28 @@ class M_produk extends Model
             ->where('DATEDIFF(expired_date, CURDATE()) <=', 180)
             ->get()->getResultArray();
     }
+
+    public function total_profit()
+    {
+        $builder = $this->db->table('transaksi t');
+        $builder->select('p.nama_produk, SUM(t.jml_pesan) AS total_terjual, SUM((t.jml_pesan * p.harga_jual) - (t.jml_pesan * p.harga_modal)) AS keuntungan, (SELECT SUM((t.jml_pesan * p.harga_jual) - (t.jml_pesan * p.harga_modal)) FROM transaksi t INNER JOIN produk p ON t.id_produk = p.produk_id INNER JOIN pembayaran pb ON t.id_pembayaran = pb.id_pembayaran WHERE pb.status_bayar = "Y") AS total_keuntungan');
+        $builder->join('produk p', 't.id_produk = p.produk_id');
+        $builder->join('pembayaran pb', 't.id_pembayaran = pb.id_pembayaran');
+        $builder->where('pb.status_bayar', 'Y');
+        $builder->groupBy('p.nama_produk');
+        $builder->orderBy('keuntungan', 'DESC');
+
+        return $builder->get()->getRowArray();
+        // return $this->db->table('pembayaran')
+        //     ->select('SUM(pembayaran.total_pembayaran) as total')
+        //     ->where('DATE_FORMAT(tgl_pembayaran, "%Y-%m-%d")', date('Y-m-d'))
+        //     ->get()->getRowArray();
+        // $query = $this->db->query("SELECT SUM(transaksi.jml_pesan * produk.harga_modal) as total
+        // FROM pembayaran
+        // JOIN transaksi ON pembayaran.id_pembayaran = transaksi.id_pembayaran
+        // JOIN produk ON produk.produk_id = transaksi.id_produk
+        // WHERE pembayaran.status_bayar = 'Y'");
+
+        // return $builder->getRowArray();
+    }
 }
