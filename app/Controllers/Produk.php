@@ -184,17 +184,23 @@ class Produk extends ResourceController
     public function create()
     {
         if ($this->validateApiKey() == TRUE) {
-            $i = $this->request->getJSON();
+            $i = $this->request;
+            $gambar = $this->request->getFile('gambar');
+            $date = date('YmdHis');
+            $newName = $date . '_' . $gambar->getName();
+
+            $gambar->move(WRITEPATH . 'uploads', $newName);
+
             $data = [
-                'kode_produk' => $i->kode_produk,
-                'nama_produk' => $i->nama_produk,
-                'kategori_id' => $i->kategori_id,
-                'harga_modal' => $i->harga_modal,
-                'harga_jual' => $i->harga_jual,
-                'stok' => $i->stok,
-                'gambar' => $i->gambar,
-                'expired_date' => $i->expired_date,
-                'date_modified' => date('Y-m-d H:i:s')
+                'kode_produk' => $i->getPost('kode_produk'),
+                'nama_produk' => $i->getPost('nama_produk'),
+                'kategori_id' => $i->getPost('kategori_id'),
+                'harga_modal' => $i->getPost('harga_modal'),
+                'harga_jual' => $i->getPost('harga_jual'),
+                'stok' => $i->getPost('stok'),
+                'gambar' => $newName,
+                'expired_date' => $i->getPost('expired_date'),
+                'date_created' => date('Y-m-d H:i:s')
             ];
 
             $createdData = $this->model->insert($data);
@@ -223,6 +229,8 @@ class Produk extends ResourceController
             return $this->response->setJSON($response);
         }
     }
+
+
 
     public function update($id = null)
     {
