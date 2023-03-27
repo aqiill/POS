@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2023 at 07:57 AM
+-- Generation Time: Mar 27, 2023 at 07:27 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -78,19 +78,20 @@ CREATE TABLE `pembayaran` (
   `total_pembayaran` varchar(50) NOT NULL,
   `total_diskon` varchar(50) NOT NULL,
   `no_pembayaran` varchar(20) NOT NULL,
-  `status_bayar` enum('Y','N') NOT NULL
+  `status_bayar` enum('Y','N') NOT NULL,
+  `tgl_pembayaran` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pembayaran`
 --
 
-INSERT INTO `pembayaran` (`id_pembayaran`, `id_user`, `total_pembayaran`, `total_diskon`, `no_pembayaran`, `status_bayar`) VALUES
-(1, 1, '56000', '5600', '0202231244001', 'Y'),
-(2, 3, '45000', '4500', '0202231246002', 'N'),
-(3, 3, '99999', '9999', '0202231248003', 'Y'),
-(4, 2, '42900', '4290', '0202231250004', 'N'),
-(5, 1, '43000', '4300', '0202231250005', 'Y');
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_user`, `total_pembayaran`, `total_diskon`, `no_pembayaran`, `status_bayar`, `tgl_pembayaran`) VALUES
+(1, 1, '56000', '5600', '0202231244001', 'Y', '2023-03-27 12:26:14'),
+(2, 3, '45000', '4500', '0202231246002', 'N', '2023-03-27 12:26:14'),
+(3, 3, '99999', '9999', '0202231248003', 'Y', '2023-03-27 12:26:14'),
+(4, 2, '42900', '4290', '0202231250004', 'N', '2023-03-27 12:26:14'),
+(5, 1, '43000', '4300', '0202231250005', 'Y', '2023-03-27 12:26:14');
 
 -- --------------------------------------------------------
 
