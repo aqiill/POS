@@ -189,7 +189,7 @@ class Produk extends ResourceController
             $date = date('YmdHis');
             $newName = $date . '_' . $gambar->getName();
 
-            $gambar->move(WRITEPATH . 'uploads', $newName);
+            $gambar->move(FCPATH . 'assets/product', $newName);
 
             $data = [
                 'kode_produk' => $i->getPost('kode_produk'),
