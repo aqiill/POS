@@ -155,6 +155,7 @@ class Produk extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $produk = $this->model->find($id);
+            $produk_by_code = $this->model->where('kode_produk', $id)->first();
 
             if ($produk) {
                 $response = [
@@ -162,7 +163,13 @@ class Produk extends ResourceController
                     'message' => 'Data Produk',
                     'data' => $produk
                 ];
-
+                return $this->response->setJSON($response);
+            } else if ($produk_by_code) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Produk',
+                    'data' => $produk_by_code
+                ];
                 return $this->response->setJSON($response);
             } else {
                 $response = [

@@ -32,8 +32,8 @@ class M_transaksi extends Model
     {
         return $this->db->table('transaksi')
             ->select('*')
-            ->join('pembayaran', 'transaksi.id_pembayaran = pembayaran.id_pembayaran')
-            ->where('pembayaran.id_pembayaran', $id)
+            // ->join('pembayaran', 'transaksi.id_pembayaran = pembayaran.id_pembayaran')
+            ->where('id_pembayaran', $id)
             ->get()->getResultArray();
     }
 
