@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 07:27 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Waktu pembuatan: 27 Mar 2023 pada 16.21
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -35,18 +35,23 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`kategori_id`, `nama_kategori`, `date_created`, `date_modified`) VALUES
 (1, 'Noodle', '2023-02-02 06:26:28', '2023-02-02 05:26:40'),
 (2, 'Snack', '2023-02-02 06:27:46', '2023-02-02 05:27:52'),
-(3, 'Ice Cream', '2023-02-02 06:28:06', '2023-02-02 05:28:15');
+(3, 'Ice Cream', '2023-02-02 06:28:06', '2023-02-02 05:28:15'),
+(6, 'mixue bandung 1', '2023-02-25 09:20:35', '2023-02-25 03:23:39'),
+(8, 'mineral', '2023-02-25 10:38:57', '2023-02-25 03:50:12'),
+(9, 'mineral', '2023-02-25 10:41:28', '2023-02-25 03:49:22'),
+(10, 'bebek', '2023-02-25 10:41:56', '2023-02-25 03:48:12'),
+(11, 'ayam', '2023-02-25 10:46:29', '2023-02-25 03:46:29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Struktur dari tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -59,17 +64,18 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `member`
+-- Dumping data untuk tabel `member`
 --
 
 INSERT INTO `member` (`id_member`, `nama_member`, `no_whatsapp`, `email_member`, `status_member`, `no_member`) VALUES
-(1, 'Richo', '08974633211', 'richo@gmail.com', 'Y', '0223001'),
-(2, 'Berliana', '08287655499', 'berliana@gmail.com', 'Y', '0223002');
+(1, 'Lamda', '08974633211', 'lamda@gmail.com', 'Y', '0223001'),
+(2, 'Berliana', '08287655499', 'berliana@gmail.com', 'Y', '0223002'),
+(3, 'aqil rahman', '083180119574', 'aqilrahaman@kojolah.com', 'Y', '0223003');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -83,20 +89,24 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pembayaran`
+-- Dumping data untuk tabel `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_user`, `total_pembayaran`, `total_diskon`, `no_pembayaran`, `status_bayar`, `tgl_pembayaran`) VALUES
-(1, 1, '56000', '5600', '0202231244001', 'Y', '2023-03-27 12:26:14'),
-(2, 3, '45000', '4500', '0202231246002', 'N', '2023-03-27 12:26:14'),
-(3, 3, '99999', '9999', '0202231248003', 'Y', '2023-03-27 12:26:14'),
-(4, 2, '42900', '4290', '0202231250004', 'N', '2023-03-27 12:26:14'),
-(5, 1, '43000', '4300', '0202231250005', 'Y', '2023-03-27 12:26:14');
+(1, 1, '56000', '5600', '0202231244001', 'Y', '2023-02-14 19:20:01'),
+(2, 3, '45000', '4500', '0202231246002', 'N', '2023-02-14 19:20:01'),
+(3, 3, '99999', '9999', '0202231248003', 'Y', '2023-02-15 19:20:01'),
+(4, 2, '42900', '4290', '0202231250004', 'N', '2023-02-15 19:20:01'),
+(5, 1, '43000', '4300', '0202231250005', 'Y', '2023-02-16 19:20:01'),
+(15, 1, '13400', '0', '202302260010', 'Y', '2023-02-17 19:20:01'),
+(16, 1, '10800', '0', '202302260011', 'Y', '2023-02-27 19:20:01'),
+(17, 1, '10800', '0', '202302260012', 'Y', '2023-02-27 19:20:01'),
+(21, 1, '13400', '0', '202302260012', 'Y', '2023-02-27 19:20:01');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -114,20 +124,23 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`produk_id`, `kode_produk`, `nama_produk`, `kategori_id`, `harga_modal`, `harga_jual`, `stok`, `gambar`, `expired_date`, `date_created`, `date_modified`) VALUES
-(1, '89686010947', 'Indomie Goreng Spesial', 1, '2300', '2700', 1000, 'IndomieGorengSpesial.png', '2024-02-29', '2023-02-02 07:01:43', '2023-02-02 06:11:11'),
-(2, '8992112206001', 'Indomie Soto', 1, '2200', '2600', 995, 'IndomieSoto.png', '2023-02-21', '2023-02-02 07:11:17', '2023-02-02 06:12:42'),
+(1, '89686010947', 'Susu', 1, '2300', '2700', 50, '20230327171253_susu.png', '2023-03-01', '2023-02-02 07:01:43', '2023-03-27 10:20:30'),
+(2, '8992112206001', 'Indomie Soto', 1, '2200', '2600', 20, '20230327171253_susu.png', '2023-02-21', '2023-02-02 07:11:17', '2023-03-27 10:20:33'),
 (3, '8992981206023', 'Tango Wafer Chocolate', 2, '8888', '10000', 388, 'TangoWaferChocolate.png', '2025-04-19', '2023-02-02 07:12:53', '2023-02-02 06:16:26'),
 (4, '8992928206231', 'Oreo Ice Cream', 2, '8250', '9000', 558, 'OreoIceCream.png', '2025-05-29', '2023-02-02 07:16:30', '2023-02-02 06:18:38'),
-(5, '8999482206023', 'Cornetto Oreo', 3, '11400', '12000', 500, 'CornettoOreo.png', '2025-06-19', '2023-02-02 07:18:45', '2023-02-02 06:21:09');
+(5, '8999482206023', 'Cornetto Oreo', 3, '11400', '12000', 500, 'CornettoOreo.png', '2025-06-19', '2023-02-02 07:18:45', '2023-02-02 06:21:09'),
+(11, '33222', 'chocolate lucky sundae', 6, '6000', '16000', 2000, '', '2023-03-27', '0000-00-00 00:00:00', '2023-03-26 12:21:57'),
+(21, '2323', 'produk 23', 6, '3000', '4000', 200, '20230327164313_wallpaper-laptop-hitam.jpg', '2023-04-08', '2023-03-27 16:43:13', '2023-03-27 09:43:13'),
+(22, '2424', 'susu 24', 3, '8000', '9000', 200, '20230327171253_susu.png', '2023-04-01', '2023-03-27 17:12:53', '2023-03-27 10:12:53');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Struktur dari tabel `settings`
 --
 
 CREATE TABLE `settings` (
@@ -139,7 +152,7 @@ CREATE TABLE `settings` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -150,20 +163,26 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_produk`, `id_pembayaran`, `jml_pesan`) VALUES
 (1, 1, 1, 5),
-(2, 2, 2, 7),
+(2, 2, 1, 7),
 (3, 3, 3, 5),
 (4, 1, 4, 3),
-(5, 3, 5, 1);
+(5, 3, 5, 1),
+(14, 1, 15, 4),
+(15, 2, 15, 1),
+(16, 1, 16, 4),
+(17, 1, 17, 4),
+(24, 1, 21, 4),
+(25, 2, 21, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -175,104 +194,106 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_user`, `nama_user`, `email_user`, `password`, `role`) VALUES
 (1, 'Fiora', 'fiora@gmail.com', 'c06d7a9ccec88dec9738524d0d1674a56f54204d', 'Admin'),
-(2, 'Putri', 'putri@gmail.com', 'e328dd94fe3c1a738abfc36279a21010b6bb2bf9', 'Kasir');
+(2, 'Putri', 'putri@gmail.com', 'e328dd94fe3c1a738abfc36279a21010b6bb2bf9', 'Kasir'),
+(3, 'aqil rahman', 'aqilrahman23@gmail.com', '990df0ca5582615aa7366805e366ea4ef5cbaaf2', 'Admin'),
+(6, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`kategori_id`);
 
 --
--- Indexes for table `member`
+-- Indeks untuk tabel `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id_member`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`produk_id`);
 
 --
--- Indexes for table `settings`
+-- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_setting`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `kategori_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kategori_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT untuk tabel `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_member` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `produk_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `produk_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT untuk tabel `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_setting` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transaksi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
