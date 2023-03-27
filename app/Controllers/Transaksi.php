@@ -233,34 +233,34 @@ class Transaksi extends ResourceController
     //     }
     // }
 
-    public function delete($id_pembayaran = null, $id_produk = null)
-    {
-        if ($this->validateApiKey() == TRUE) {
-            $deletedData = $this->model->delete($id);
+    // public function delete($id_produk = null)
+    // {
+    //     if ($this->validateApiKey() == TRUE) {
+    //         $deletedData = $this->model->delete($id);
 
-            if ($deletedData) {
-                $response = [
-                    'status' => 204,
-                    'message' => 'Data deleted'
-                ];
+    //         if ($deletedData) {
+    //             $response = [
+    //                 'status' => 204,
+    //                 'message' => 'Data deleted'
+    //             ];
 
-                return $this->response->setJSON($response);
-            } else {
-                $response = [
-                    'status' => 400,
-                    'message' => 'Failed to delete data'
-                ];
+    //             return $this->response->setJSON($response);
+    //         } else {
+    //             $response = [
+    //                 'status' => 400,
+    //                 'message' => 'Failed to delete data'
+    //             ];
 
-                return $this->response->setJSON($response);
-            }
-        } else {
-            $response = [
-                'status' => 401,
-                'message' => 'API Key tidak ditemukan.'
-            ];
-            return $this->response->setJSON($response);
-        }
-    }
+    //             return $this->response->setJSON($response);
+    //         }
+    //     } else {
+    //         $response = [
+    //             'status' => 401,
+    //             'message' => 'API Key tidak ditemukan.'
+    //         ];
+    //         return $this->response->setJSON($response);
+    //     }
+    // }
 
     public function pendapatan()
     {
