@@ -56,13 +56,45 @@ class Transaksi extends ResourceController
         }
     }
 
+    public function today()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            // $transaksi = $this->model->findAll();
+            $model = new M_transaksi();
+            $transaksi = $model->get_transaksi_today();
+
+            if ($transaksi) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Transaksi Today',
+                    'data' => $transaksi
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found',
+                    'data' => ''
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
     public function show($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
             // $transaksi = $this->model->find($id);
             $model = new M_transaksi();
             $transaksi = $model->get_transaksi_show($id);
-
             if ($transaksi) {
                 $response = [
                     'status' => 200,

@@ -42,6 +42,7 @@ $routes->get('produk/kategori/', 'Produk::produk_kategori/');
 $routes->get('produk/kategori/(:num)', 'Produk::produk_kategori/$1');
 $routes->resource('produk');
 
+$routes->get('transaksi/today', 'Transaksi::today/');
 $routes->get('transaksi/best_selling/', 'Transaksi::best_selling/');
 $routes->get('transaksi/pendapatan/', 'Transaksi::pendapatan/');
 $routes->get('transaksi/riwayat_transaksi/', 'Transaksi::riwayat_transaksi/');
