@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\M_users;
 
 class Users extends ResourceController
 {
@@ -176,6 +177,60 @@ class Users extends ResourceController
                 $response = [
                     'status' => 400,
                     'message' => 'Failed to delete data'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
+    public function changepass()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            $i = $this->request->getJSON();
+            $model = new M_users();
+            $cek = $model->cekpass($i->email, $i->password);
+
+            if ($cek) {
+                if ($i->nama_user != null) {
+                    $data = [
+                        'nama_user' => $i->nama_user,
+                        'password' => sha1($i->password_baru),
+                    ];
+                } else {
+                    $data = [
+                        'password' => sha1($i->password_baru),
+                    ];
+                }
+
+                $updatedData = $this->model->update($cek['id_user'], $data);
+
+                if ($updatedData) {
+                    $response = [
+                        'status' => 200,
+                        'message' => 'Data updated',
+                        'data' => $data
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Failed to update data'
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
+            } else {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Email atau Password lama salah'
                 ];
 
                 return $this->response->setJSON($response);

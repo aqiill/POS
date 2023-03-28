@@ -20,4 +20,12 @@ class M_users extends Model
     ];
 
     protected $useTimestamps = false;
+
+    public function cekpass($email, $password)
+    {
+        $builder = $this->db->table('users');
+        $builder->where(['email_user' => $email, 'password' => sha1($password)]);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
 }
