@@ -268,6 +268,7 @@ class Transaksi extends ResourceController
             $model = new M_transaksi();
             $model_produk = new M_produk();
 
+            $total_transaksi = $model->total_transaksi();
             $total_pendapatan = $model->total_pendapatan();
             $total_harian = $model->total_harian();
             $total_profit = $model_produk->total_profit();
@@ -277,6 +278,7 @@ class Transaksi extends ResourceController
                     'status' => 200,
                     'message' => 'Data Pendapatan',
                     'data' => [
+                        'total_transaksi' => $total_transaksi['total'],
                         'total_pendapatan' => $total_pendapatan['total'],
                         'total_profit' => $total_profit['total_keuntungan'],
                         'total_harian' => $total_harian['total']

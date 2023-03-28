@@ -75,4 +75,12 @@ class M_transaksi extends Model
             ->join('users', 'users.id_user = pembayaran.id_user')
             ->get()->getResultArray();
     }
+
+    public function total_transaksi()
+    {
+        return $this->db->table('pembayaran')
+            ->select('COUNT(pembayaran.id_pembayaran) as total')
+            ->where('pembayaran.status_bayar', 'Y')
+            ->get()->getRowArray();
+    }
 }
