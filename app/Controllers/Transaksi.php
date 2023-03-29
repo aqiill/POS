@@ -42,7 +42,8 @@ class Transaksi extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -75,7 +76,7 @@ class Transaksi extends ResourceController
                 $response = [
                     'status' => 404,
                     'message' => 'Data not found',
-                    'data' => ''
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -106,7 +107,8 @@ class Transaksi extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -209,7 +211,8 @@ class Transaksi extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -321,7 +324,8 @@ class Transaksi extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -352,7 +356,8 @@ class Transaksi extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);

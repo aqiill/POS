@@ -39,7 +39,8 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -69,7 +70,8 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -108,7 +110,8 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'Failed to create data'
+                    'message' => 'Failed to create data',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -147,7 +150,8 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'Failed to update data'
+                    'message' => 'Failed to update data',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);

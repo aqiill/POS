@@ -39,7 +39,8 @@ class Produk extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -75,7 +76,8 @@ class Produk extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -106,7 +108,8 @@ class Produk extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -137,7 +140,8 @@ class Produk extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -174,7 +178,8 @@ class Produk extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);

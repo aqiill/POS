@@ -38,7 +38,8 @@ class Member extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
@@ -68,7 +69,8 @@ class Member extends ResourceController
             } else {
                 $response = [
                     'status' => 404,
-                    'message' => 'Data not found'
+                    'message' => 'Data not found',
+                    'data' => []
                 ];
 
                 return $this->response->setJSON($response);
