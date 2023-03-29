@@ -306,7 +306,7 @@ class Transaksi extends ResourceController
             $total_transaksi = $model->total_transaksi();
             $total_pendapatan = $model->total_pendapatan();
             $total_harian = $model->total_harian();
-            $total_profit = $model_produk->total_profit();
+            $total_profit = $model_produk->total_profit()->getRowArray();
 
             if ($total_pendapatan != "" && $total_harian != "") {
                 $response = [
@@ -318,6 +318,40 @@ class Transaksi extends ResourceController
                         'total_profit' => $total_profit['total_keuntungan'],
                         'total_harian' => $total_harian['total']
                     ]
+                ];
+
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 404,
+                    'message' => 'Data not found',
+                    'data' => []
+                ];
+
+                return $this->response->setJSON($response);
+            }
+        } else {
+            $response = [
+                'status' => 401,
+                'message' => 'API Key tidak ditemukan.'
+            ];
+            return $this->response->setJSON($response);
+        }
+    }
+
+    public function profit()
+    {
+        if ($this->validateApiKey() == TRUE) {
+            $model = new M_transaksi();
+            $model_produk = new M_produk();
+
+            $profit = $model_produk->total_profit()->getResultArray();
+
+            if ($profit) {
+                $response = [
+                    'status' => 200,
+                    'message' => 'Data Pendapatan',
+                    'data' => $profit
                 ];
 
                 return $this->response->setJSON($response);

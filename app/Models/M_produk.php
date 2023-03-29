@@ -70,7 +70,7 @@ class M_produk extends Model
         $builder->groupBy('p.nama_produk');
         $builder->orderBy('keuntungan', 'DESC');
 
-        return $builder->get()->getRowArray();
+        return $builder->get();
         // return $this->db->table('pembayaran')
         //     ->select('SUM(pembayaran.total_pembayaran) as total')
         //     ->where('DATE_FORMAT(tgl_pembayaran, "%Y-%m-%d")', date('Y-m-d'))
