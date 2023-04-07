@@ -129,61 +129,70 @@ class Transaksi extends ResourceController
             $model_produk = new M_produk();
             $i = $this->request->getJSON();
 
-            foreach ($i->detail as $item) {
-                $produk = $model_produk->get_produk_kategori_show($item->id_produk);
-                foreach ($produk as $value) {
-                    $kurangi = $value['stok'] - $item->jml_pesan;
-                    if ($value['stok'] < $item->jml_pesan) {
-                        $response[] = [
-                            'status' => 400,
-                            'message' => 'Stok ' . $value['nama_produk'] . ' tidak mencukupi sebanyak ' . $item->jml_pesan
-                        ];
-                    } else {
-                        $response = null;
-                        $update_stok = $model_produk->update($value['produk_id'], ['stok' => $kurangi]);
-                    }
-                }
-            }
-
-            if ($response != null) {
-                return $this->response->setJSON($response);
-            }
-
-            $data_pembayaran = [
-                'id_user'   => $i->id_user,
-                'total_pembayaran'  => $i->total_pembayaran,
-                'total_diskon'  => $i->total_diskon,
-                'no_pembayaran' => $i->no_pembayaran,
-                'status_bayar' => $i->status_bayar,
-            ];
-
-            $created_pembayaran = $model->create('pembayaran', $data_pembayaran);
-            $id_pembayaran = $this->model->insertID();
-
-            foreach ($i->detail as $key => $value) {
-                $data_detail[] = [
-                    'id_produk' => $value->id_produk,
-                    'id_pembayaran' => $id_pembayaran,
-                    'jml_pesan' => $value->jml_pesan
-                ];
-            }
-
-            $created_detail = $this->model->insertBatch($data_detail);
-
-            if ($created_pembayaran != "" || $created_detail != "") {
+            if ($i->id_user == "" || $i->total_pembayaran == "" || $i->total_diskon == "" || $i->no_pembayaran == "" || $i->status_bayar == "" || $i->detail == "") {
                 $response = [
-                    'status' => 201,
-                    'message' => 'Transaksi berhasil'
+                    'status' => 400,
+                    'message' => 'Inputan tidak boleh kosong'
                 ];
 
                 return $this->response->setJSON($response);
             } else {
-                $response = [
-                    'status' => 400,
-                    'message' => 'Transaksi gagal'
+                foreach ($i->detail as $item) {
+                    $produk = $model_produk->get_produk_kategori_show($item->id_produk);
+                    foreach ($produk as $value) {
+                        $kurangi = $value['stok'] - $item->jml_pesan;
+                        if ($value['stok'] < $item->jml_pesan) {
+                            $response[] = [
+                                'status' => 400,
+                                'message' => 'Stok ' . $value['nama_produk'] . ' tidak mencukupi sebanyak ' . $item->jml_pesan
+                            ];
+                        } else {
+                            $response = null;
+                            $update_stok = $model_produk->update($value['produk_id'], ['stok' => $kurangi]);
+                        }
+                    }
+                }
+
+                if ($response != null) {
+                    return $this->response->setJSON($response);
+                }
+
+                $data_pembayaran = [
+                    'id_user'   => $i->id_user,
+                    'total_pembayaran'  => $i->total_pembayaran,
+                    'total_diskon'  => $i->total_diskon,
+                    'no_pembayaran' => $i->no_pembayaran,
+                    'status_bayar' => $i->status_bayar,
                 ];
 
-                return $this->response->setJSON($response);
+                $created_pembayaran = $model->create('pembayaran', $data_pembayaran);
+                $id_pembayaran = $this->model->insertID();
+
+                foreach ($i->detail as $key => $value) {
+                    $data_detail[] = [
+                        'id_produk' => $value->id_produk,
+                        'id_pembayaran' => $id_pembayaran,
+                        'jml_pesan' => $value->jml_pesan
+                    ];
+                }
+
+                $created_detail = $this->model->insertBatch($data_detail);
+
+                if ($created_pembayaran != "" || $created_detail != "") {
+                    $response = [
+                        'status' => 201,
+                        'message' => 'Transaksi berhasil'
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Transaksi gagal'
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
             }
         } else {
             $response = [
