@@ -89,6 +89,14 @@ class Kategori extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
+            if ($i->nama_kategori == null) {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Nama Kategori tidak boleh kosong'
+                ];
+                return $this->response->setJSON($response);
+            }
+
             $data = [
                 'nama_kategori' => $i->nama_kategori,
                 'date_created' => date('Y-m-d H:i:s')
@@ -125,6 +133,14 @@ class Kategori extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
+            if ($i->nama_kategori == null) {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Nama Kategori tidak boleh kosong'
+                ];
+                return $this->response->setJSON($response);
+            }
+
             $data = [
                 'nama_kategori' => $i->nama_kategori,
                 'date_updated' => date('Y-m-d H:i:s')
