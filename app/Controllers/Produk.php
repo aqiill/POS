@@ -197,41 +197,65 @@ class Produk extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request;
-            $gambar = $this->request->getFile('gambar');
-            $date = date('YmdHis');
-            $newName = $date . '_' . $gambar->getName();
+            //validate input
+            $validation =  \Config\Services::validation();
+            $validation->setRules([
+                'kode_produk' => 'required|is_unique[produk.kode_produk]',
+                'nama_produk' => 'required',
+                'kategori_id' => 'required',
+                'harga_modal' => 'required',
+                'harga_jual' => 'required',
+                'stok' => 'required',
+                'gambar' => 'uploaded[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]|max_size[gambar,1024]',
+                'expired_date' => 'required'
+            ]);
+            $validation->withRequest($this->request)->run();
 
-            $gambar->move(FCPATH . 'assets/product', $newName);
-
-            $data = [
-                'kode_produk' => $i->getPost('kode_produk'),
-                'nama_produk' => $i->getPost('nama_produk'),
-                'kategori_id' => $i->getPost('kategori_id'),
-                'harga_modal' => $i->getPost('harga_modal'),
-                'harga_jual' => $i->getPost('harga_jual'),
-                'stok' => $i->getPost('stok'),
-                'gambar' => $newName,
-                'expired_date' => $i->getPost('expired_date'),
-                'date_created' => date('Y-m-d H:i:s')
-            ];
-
-            $createdData = $this->model->insert($data);
-
-            if ($createdData) {
+            if ($validation->getErrors()) {
                 $response = [
-                    'status' => 201,
-                    'message' => 'Data created',
-                    'data' => $data
+                    'status' => 400,
+                    'message' => 'Data not valid',
+                    'data' => $validation->getErrors()
                 ];
 
                 return $this->response->setJSON($response);
             } else {
-                $response = [
-                    'status' => 400,
-                    'message' => 'Failed to create data'
+                $gambar = $this->request->getFile('gambar');
+                $date = date('YmdHis');
+                $newName = $date . '_' . $gambar->getName();
+
+                $gambar->move(FCPATH . 'assets/product', $newName);
+
+                $data = [
+                    'kode_produk' => $i->getPost('kode_produk'),
+                    'nama_produk' => $i->getPost('nama_produk'),
+                    'kategori_id' => $i->getPost('kategori_id'),
+                    'harga_modal' => $i->getPost('harga_modal'),
+                    'harga_jual' => $i->getPost('harga_jual'),
+                    'stok' => $i->getPost('stok'),
+                    'gambar' => $newName,
+                    'expired_date' => $i->getPost('expired_date'),
+                    'date_created' => date('Y-m-d H:i:s')
                 ];
 
-                return $this->response->setJSON($response);
+                $createdData = $this->model->insert($data);
+
+                if ($createdData) {
+                    $response = [
+                        'status' => 201,
+                        'message' => 'Data created',
+                        'data' => $data
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Failed to create data'
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
             }
         } else {
             $response = [
@@ -248,58 +272,83 @@ class Produk extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request;
-            $gambar = $this->request->getFile('gambar');
 
-            if ($gambar == null) {
-                $data = [
-                    'kode_produk' => $i->getPost('kode_produk'),
-                    'nama_produk' => $i->getPost('nama_produk'),
-                    'kategori_id' => $i->getPost('kategori_id'),
-                    'harga_modal' => $i->getPost('harga_modal'),
-                    'harga_jual' => $i->getPost('harga_jual'),
-                    'stok' => $i->getPost('stok'),
-                    'expired_date' => $i->getPost('expired_date'),
-                    'date_updated' => date('Y-m-d H:i:s')
-                ];
-            } else {
-                $date = date('YmdHis');
-                $newName = $date . '_' . $gambar->getName();
+            //validate input
+            $validation =  \Config\Services::validation();
+            $validation->setRules([
+                'kode_produk' => 'required',
+                'nama_produk' => 'required',
+                'kategori_id' => 'required',
+                'harga_modal' => 'required',
+                'harga_jual' => 'required',
+                'stok' => 'required',
+                // 'gambar' => 'mime_in[gambar,image/jpg,image/jpeg,image/png]|max_size[gambar,1024]',
+                'expired_date' => 'required'
+            ]);
+            $validation->withRequest($this->request)->run();
 
-                $gambar->move(FCPATH . 'assets/product', $newName);
-                $data = [
-                    'kode_produk' => $i->getPost('kode_produk'),
-                    'nama_produk' => $i->getPost('nama_produk'),
-                    'kategori_id' => $i->getPost('kategori_id'),
-                    'harga_modal' => $i->getPost('harga_modal'),
-                    'harga_jual' => $i->getPost('harga_jual'),
-                    'stok' => $i->getPost('stok'),
-                    'gambar' => $newName,
-                    'expired_date' => $i->getPost('expired_date'),
-                    'date_updated' => date('Y-m-d H:i:s')
-                ];
-                $oldFile = $this->model->find($id);
-                if ($oldFile['gambar'] != '') {
-                    unlink(FCPATH . 'assets/product/' . $oldFile['gambar']);
-                }
-            }
-
-            $updatedData = $this->model->update($id, $data);
-
-            if ($updatedData) {
-                $response = [
-                    'status' => 200,
-                    'message' => 'Data updated',
-                    'data' => $data
-                ];
-
-                return $this->response->setJSON($response);
-            } else {
+            if ($validation->getErrors()) {
                 $response = [
                     'status' => 400,
-                    'message' => 'Failed to update data'
+                    'message' => 'Data not valid',
+                    'data' => $validation->getErrors()
                 ];
 
                 return $this->response->setJSON($response);
+            } else {
+                $gambar = $this->request->getFile('gambar');
+
+                if ($gambar == null) {
+                    $data = [
+                        'kode_produk' => $i->getPost('kode_produk'),
+                        'nama_produk' => $i->getPost('nama_produk'),
+                        'kategori_id' => $i->getPost('kategori_id'),
+                        'harga_modal' => $i->getPost('harga_modal'),
+                        'harga_jual' => $i->getPost('harga_jual'),
+                        'stok' => $i->getPost('stok'),
+                        'expired_date' => $i->getPost('expired_date'),
+                        'date_updated' => date('Y-m-d H:i:s')
+                    ];
+                } else {
+                    $date = date('YmdHis');
+                    $newName = $date . '_' . $gambar->getName();
+
+                    $gambar->move(FCPATH . 'assets/product', $newName);
+                    $data = [
+                        'kode_produk' => $i->getPost('kode_produk'),
+                        'nama_produk' => $i->getPost('nama_produk'),
+                        'kategori_id' => $i->getPost('kategori_id'),
+                        'harga_modal' => $i->getPost('harga_modal'),
+                        'harga_jual' => $i->getPost('harga_jual'),
+                        'stok' => $i->getPost('stok'),
+                        'gambar' => $newName,
+                        'expired_date' => $i->getPost('expired_date'),
+                        'date_updated' => date('Y-m-d H:i:s')
+                    ];
+                    $oldFile = $this->model->find($id);
+                    if ($oldFile['gambar'] != '') {
+                        unlink(FCPATH . 'assets/product/' . $oldFile['gambar']);
+                    }
+                }
+
+                $updatedData = $this->model->update($id, $data);
+
+                if ($updatedData) {
+                    $response = [
+                        'status' => 200,
+                        'message' => 'Data updated',
+                        'data' => $data
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Failed to update data'
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
             }
         } else {
             $response = [
