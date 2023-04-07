@@ -48,6 +48,14 @@ class Login extends Controller
         $api_key = $this->request->getServer('HTTP_API_KEY');
         if ($api_key === getenv('API_KEY')) {
             $i = $this->request->getJSON();
+            if (empty($i->email_user)) {
+                $response = [
+                    'status' => 401,
+                    'message' => 'Email tidak boleh kosong'
+                ];
+                return $this->response->setJSON($response);
+            }
+
             $email_user = $i->email_user;
 
             $model = new M_login();
