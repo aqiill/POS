@@ -89,32 +89,42 @@ class Users extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
-            $data = [
-                'nama_user' => $i->nama_user,
-                'email_user' => $i->email_user,
-                'password' => sha1($i->password),
-                'role' => $i->role,
-                'date_created' => date('Y-m-d H:i:s')
-            ];
-
-            $createdData = $this->model->insert($data);
-
-            if ($createdData) {
-                $response = [
-                    'status' => 201,
-                    'message' => 'Data created',
-                    'data' => $data
-                ];
-
-                return $this->response->setJSON($response);
-            } else {
+            if (empty($i->nama_user) || empty($i->email_user) || empty($i->password) || empty($i->role)) {
                 $response = [
                     'status' => 400,
-                    'message' => 'Failed to create data',
+                    'message' => 'Data tidak lengkap',
                     'data' => []
                 ];
 
                 return $this->response->setJSON($response);
+            } else {
+                $data = [
+                    'nama_user' => $i->nama_user,
+                    'email_user' => $i->email_user,
+                    'password' => sha1($i->password),
+                    'role' => $i->role,
+                    'date_created' => date('Y-m-d H:i:s')
+                ];
+
+                $createdData = $this->model->insert($data);
+
+                if ($createdData) {
+                    $response = [
+                        'status' => 201,
+                        'message' => 'Data created',
+                        'data' => $data
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Failed to create data',
+                        'data' => []
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
             }
         } else {
             $response = [
@@ -129,32 +139,42 @@ class Users extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
-            $data = [
-                'nama_user' => $i->nama_user,
-                'email_user' => $i->email_user,
-                'password' => sha1($i->password),
-                'role' => $i->role,
-                'date_created' => date('Y-m-d H:i:s')
-            ];
-
-            $updatedData = $this->model->update($id, $data);
-
-            if ($updatedData) {
-                $response = [
-                    'status' => 200,
-                    'message' => 'Data updated',
-                    'data' => $data
-                ];
-
-                return $this->response->setJSON($response);
-            } else {
+            if (empty($i->nama_user) || empty($i->email_user) || empty($i->password) || empty($i->role)) {
                 $response = [
                     'status' => 400,
-                    'message' => 'Failed to update data',
+                    'message' => 'Data tidak lengkap',
                     'data' => []
                 ];
 
                 return $this->response->setJSON($response);
+            } else {
+                $data = [
+                    'nama_user' => $i->nama_user,
+                    'email_user' => $i->email_user,
+                    'password' => sha1($i->password),
+                    'role' => $i->role,
+                    'date_created' => date('Y-m-d H:i:s')
+                ];
+
+                $updatedData = $this->model->update($id, $data);
+
+                if ($updatedData) {
+                    $response = [
+                        'status' => 200,
+                        'message' => 'Data updated',
+                        'data' => $data
+                    ];
+
+                    return $this->response->setJSON($response);
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'Failed to update data',
+                        'data' => []
+                    ];
+
+                    return $this->response->setJSON($response);
+                }
             }
         } else {
             $response = [
@@ -198,6 +218,17 @@ class Users extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
+            //validate input json
+            if (empty($i->email) || empty($i->password) || empty($i->password_baru)) {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Lengkapi Form',
+                    'data' => []
+                ];
+
+                return $this->response->setJSON($response);
+            }
+
             $model = new M_users();
             $cek = $model->cekpass($i->email, $i->password);
 
