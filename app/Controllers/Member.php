@@ -88,6 +88,16 @@ class Member extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
+            //validate input json
+            if ($i->nama_member == null || $i->no_whatsapp == null || $i->email_member == null || $i->status_member == null || $i->no_member == null) {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Failed to create data, input data is not complete'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+
             $data = [
                 'nama_member' => $i->nama_member,
                 'no_whatsapp' => $i->no_whatsapp,
@@ -127,6 +137,16 @@ class Member extends ResourceController
     {
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
+            //validate input json
+            if ($i->nama_member == null || $i->no_whatsapp == null || $i->email_member == null || $i->status_member == null || $i->no_member == null) {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Failed to update data, input data is not complete'
+                ];
+
+                return $this->response->setJSON($response);
+            }
+
             $data = [
                 'nama_member' => $i->nama_member,
                 'no_whatsapp' => $i->no_whatsapp,
