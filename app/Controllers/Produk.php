@@ -313,6 +313,12 @@ class Produk extends ResourceController
     public function delete($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
+            //unlink gambar
+            $oldFile = $this->model->find($id);
+            if ($oldFile['gambar'] != '') {
+                unlink(FCPATH . 'assets/product/' . $oldFile['gambar']);
+            }
+
             $deletedData = $this->model->delete($id);
 
             if ($deletedData) {
