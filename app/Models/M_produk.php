@@ -71,16 +71,5 @@ class M_produk extends Model
         $builder->orderBy('keuntungan', 'DESC');
 
         return $builder->get();
-        // return $this->db->table('pembayaran')
-        //     ->select('SUM(pembayaran.total_pembayaran) as total')
-        //     ->where('DATE_FORMAT(tgl_pembayaran, "%Y-%m-%d")', date('Y-m-d'))
-        //     ->get()->getRowArray();
-        // $query = $this->db->query("SELECT SUM(transaksi.jml_pesan * produk.harga_modal) as total
-        // FROM pembayaran
-        // JOIN transaksi ON pembayaran.id_pembayaran = transaksi.id_pembayaran
-        // JOIN produk ON produk.produk_id = transaksi.id_produk
-        // WHERE pembayaran.status_bayar = 'Y'");
-
-        // return $builder->getRowArray();
     }
 }

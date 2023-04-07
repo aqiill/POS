@@ -247,17 +247,41 @@ class Produk extends ResourceController
     public function update($id = null)
     {
         if ($this->validateApiKey() == TRUE) {
-            $i = $this->request->getJSON();
-            $data = [
-                'kode_produk' => $i->kode_produk,
-                'nama_produk' => $i->nama_produk,
-                'kategori_id' => $i->kategori_id,
-                'harga_modal' => $i->harga_modal,
-                'harga_jual' => $i->harga_jual,
-                'stok' => $i->stok,
-                'gambar' => $i->gambar,
-                'date_modified' => date('Y-m-d H:i:s')
-            ];
+            $i = $this->request;
+            $gambar = $this->request->getFile('gambar');
+
+            if ($gambar == null) {
+                $data = [
+                    'kode_produk' => $i->getPost('kode_produk'),
+                    'nama_produk' => $i->getPost('nama_produk'),
+                    'kategori_id' => $i->getPost('kategori_id'),
+                    'harga_modal' => $i->getPost('harga_modal'),
+                    'harga_jual' => $i->getPost('harga_jual'),
+                    'stok' => $i->getPost('stok'),
+                    'expired_date' => $i->getPost('expired_date'),
+                    'date_updated' => date('Y-m-d H:i:s')
+                ];
+            } else {
+                $date = date('YmdHis');
+                $newName = $date . '_' . $gambar->getName();
+
+                $gambar->move(FCPATH . 'assets/product', $newName);
+                $data = [
+                    'kode_produk' => $i->getPost('kode_produk'),
+                    'nama_produk' => $i->getPost('nama_produk'),
+                    'kategori_id' => $i->getPost('kategori_id'),
+                    'harga_modal' => $i->getPost('harga_modal'),
+                    'harga_jual' => $i->getPost('harga_jual'),
+                    'stok' => $i->getPost('stok'),
+                    'gambar' => $newName,
+                    'expired_date' => $i->getPost('expired_date'),
+                    'date_updated' => date('Y-m-d H:i:s')
+                ];
+                $oldFile = $this->model->find($id);
+                if ($oldFile['gambar'] != '') {
+                    unlink(FCPATH . 'assets/product/' . $oldFile['gambar']);
+                }
+            }
 
             $updatedData = $this->model->update($id, $data);
 
