@@ -274,7 +274,7 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'Email atau Password lama salah'
+                    'message' => 'Email yoi atau Password lama salah'
                 ];
 
                 return $this->response->setJSON($response);
