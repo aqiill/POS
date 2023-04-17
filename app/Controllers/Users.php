@@ -219,15 +219,15 @@ class Users extends ResourceController
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
             //validate input json
-            if (empty($i->password) && empty($i->password_baru) && empty($i->nama_user)) {
-                $response = [
-                    'status' => 400,
-                    'message' => 'Lengkapi Form',
-                    'data' => []
-                ];
+            // if (empty($i->password) && empty($i->password_baru) && empty($i->nama_user)) {
+            //     $response = [
+            //         'status' => 400,
+            //         'message' => 'Lengkapi Form',
+            //         'data' => []
+            //     ];
 
-                return $this->response->setJSON($response);
-            }
+            //     return $this->response->setJSON($response);
+            // }
 
             $model = new M_users();
             $cek = $model->cekpass($i->email, $i->password);
@@ -274,7 +274,7 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'tes'
+                    'message' => 'Email atau Password lama salah'
                 ];
 
                 return $this->response->setJSON($response);
