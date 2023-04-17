@@ -233,6 +233,9 @@ class Users extends ResourceController
             $cek = $model->cekpass($i->email, $i->password);
 
             if ($cek) {
+                $data = [
+                    'nama_user' => $i->nama_user
+                ];
                 if ($i->nama_user != null) {
                     $data = [
                         'nama_user' => $i->nama_user,
@@ -274,7 +277,7 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'Email atau Password lama salah'
+                    'message' => 'FKBAJDFBOQEWILBGFVLQIEWBGFQWP'
                 ];
 
                 return $this->response->setJSON($response);
