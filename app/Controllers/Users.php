@@ -219,7 +219,7 @@ class Users extends ResourceController
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
             //validate input json
-            if (empty($i->password) || empty($i->password_baru) || empty($i->nama_user)) {
+            if (empty($i->password) && empty($i->password_baru) && empty($i->nama_user)) {
                 $response = [
                     'status' => 400,
                     'message' => 'Lengkapi Form',
@@ -274,7 +274,7 @@ class Users extends ResourceController
             } else {
                 $response = [
                     'status' => 400,
-                    'message' => 'Email yoi atau Password lama salah'
+                    'message' => 'Email atau Password lama salah'
                 ];
 
                 return $this->response->setJSON($response);
