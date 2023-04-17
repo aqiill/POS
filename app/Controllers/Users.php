@@ -219,7 +219,7 @@ class Users extends ResourceController
         if ($this->validateApiKey() == TRUE) {
             $i = $this->request->getJSON();
             //validate input json
-            if (empty($i->email) || empty($i->password) || empty($i->password_baru)) {
+            if (empty($i->password) || empty($i->password_baru) || empty($i->nama_user)) {
                 $response = [
                     'status' => 400,
                     'message' => 'Lengkapi Form',
@@ -238,7 +238,16 @@ class Users extends ResourceController
                         'nama_user' => $i->nama_user,
                         'password' => sha1($i->password_baru),
                     ];
-                } else {
+                } 
+                
+                if ($i->password == null) {
+                    $data = [
+                        'nama_user' => $i->nama_user
+                    ];
+
+                }
+                
+                if ($i->password != null && $i->password_baru != null ){
                     $data = [
                         'password' => sha1($i->password_baru),
                     ];
