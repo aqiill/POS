@@ -129,7 +129,7 @@ class Transaksi extends ResourceController
             $model_produk = new M_produk();
             $i = $this->request->getJSON();
 
-            if ($i->id_user == "" || $i->total_pembayaran == "" || $i->total_diskon == "" || $i->no_pembayaran == "" || $i->status_bayar == "" || $i->detail == "") {
+            if ($i->id_user == "" && $i->total_pembayaran == "" && $i->total_diskon == "" && $i->no_pembayaran == "" && $i->status_bayar == "" && $i->detail == "") {
                 $response = [
                     'status' => 400,
                     'message' => 'Inputan tidak boleh kosong'
@@ -137,17 +137,18 @@ class Transaksi extends ResourceController
 
                 return $this->response->setJSON($response);
             } else {
+                $response = "";
                 foreach ($i->detail as $item) {
                     $produk = $model_produk->get_produk_kategori_show($item->id_produk);
                     foreach ($produk as $value) {
                         $kurangi = $value['stok'] - $item->jml_pesan;
                         if ($value['stok'] < $item->jml_pesan) {
-                            $response[] = [
+                            $response = [
                                 'status' => 400,
                                 'message' => 'Stok ' . $value['nama_produk'] . ' tidak mencukupi sebanyak ' . $item->jml_pesan
                             ];
                         } else {
-                            $response = null;
+                            $response = "";
                             $update_stok = $model_produk->update($value['produk_id'], ['stok' => $kurangi]);
                         }
                     }
